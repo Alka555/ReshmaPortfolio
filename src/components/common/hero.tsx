@@ -35,7 +35,7 @@ export function Hero({
   portraitImage = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
   portraitAlt = "Portrait of Reshma Muraleedharan Tp",
   heroHighlightTitle = "I build cinematic worlds that feel intimate, clear, and quietly unforgettable.",
-  heroDescription = "From brand films to short-form stories, I shape each piece around rhythm, atmosphere, and emotional clarity.",
+  heroDescription = "I craft stories that connect brands with people through emotion, clarity, and cinematic storytelling.",
   heroQuote = "Quiet confidence tells the story better than noise.",
   heroSkills,
 }: HeroProps) {
@@ -102,10 +102,10 @@ export function Hero({
                   </Link>
                 </Button>
               </div>
-              <div className="mt-6 flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.24em] text-white/60 sm:gap-4">
+              {/* <div className="mt-6 flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.24em] text-white/60 sm:gap-4">
                 <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2">Selective commissions</span>
                 <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-2">Remote + on-location</span>
-              </div>
+              </div> */}
             </BlurReveal>
           </div>
 

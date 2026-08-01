@@ -33,7 +33,8 @@ export function Navbar({ className }: NavbarProps) {
     >
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
         <Link href="/" className="font-heading text-lg font-semibold uppercase tracking-[0.28em] text-white transition-colors hover:text-gold">
-          {siteConfig.name}
+          {/* {siteConfig.name} */}
+          Reshma Muraleedharan Tp
         </Link>
 
         <nav aria-label="Main Navigation" className="hidden items-center gap-7 md:flex">
