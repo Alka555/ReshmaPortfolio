@@ -28,7 +28,7 @@ export function InstagramSlider({ items }: InstagramSliderProps) {
           <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Latest episodes</p>
           <h3 className="mt-2 font-heading text-2xl text-white md:text-3xl">Short-form stories, one by one.</h3>
         </div>
-        <Link href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="hidden items-center text-[10px] uppercase tracking-[0.28em] text-white/70 transition-colors hover:text-gold md:inline-flex">
+        <Link href="https://www.instagram.com/reshma_muraleedharan_tp?igsh=dHFuZHZqaWUwOThj/" target="_blank" rel="noreferrer" className="hidden items-center text-[10px] uppercase tracking-[0.28em] text-white/70 transition-colors hover:text-gold md:inline-flex">
           Follow along
           <ArrowRight className="ml-2 h-4 w-4" />
         </Link>

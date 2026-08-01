@@ -15,7 +15,7 @@ export const siteContent = {
   introEyebrow: "Portrait intro",
   introTitle: "I build cinematic worlds that feel intimate, clear, and quietly unforgettable.",
   introDescription:
-    "From brand films to short-form stories, I shape each piece around rhythm, atmosphere, and emotional clarity.",
+    "I craft stories that connect brands with people through emotion, clarity, and cinematic storytelling.",
   skills: [
     {
       title: "Directing",
@@ -37,40 +37,110 @@ export const siteContent = {
   reels: [
     {
       id: "reel-1",
-      title: "Quiet Motion",
-      description: "A short-form study in atmosphere and stillness.",
+      title: "Adithya",
+      description: "From city lights to the goodness of village life, Adithya's journey takes an unexpected turn. Will her world collide with Anandan's pure heart? A female perspective on love and finding home🌸",
       thumbnail:
-        "https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=800&q=80",
-      href: "https://www.instagram.com/",
+        "/images/EP9.png",
+      href: "https://www.instagram.com/reel/DYpE-FMzP09/?igsh=MWNxNW1zcjRzaTZkNQ==",
       label: "Latest reel",
     },
     {
       id: "reel-2",
-      title: "Afterlight",
-      description: "Warm frames, cinematic pacing, and emotional clarity.",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
       thumbnail:
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-      href: "https://www.instagram.com/",
-      label: "New episode",
-    },
-    {
+        "/images/EP8.png",
+      href: "https://www.instagram.com/reel/DYmgT3pTc0O/?igsh=djd0NWhtYWNxZHZw",
+      label: "Latest reel",
+    },{
       id: "reel-3",
-      title: "A Frame in Bloom",
-      description: "Editorial storytelling shaped around gesture and light.",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
       thumbnail:
-        "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
-      href: "https://www.instagram.com/",
-      label: "Behind the scenes",
+        "/images/EP7.png",
+      href: "https://www.instagram.com/reel/DYj7a8fzTaY/?igsh=MTFpbDBzbHUwMnZ2dA==",
+      label: "Latest reel",
+    },{
+      id: "reel-4",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP6.png",
+      href: "https://www.instagram.com/reel/DYhWoR3TcBp/?igsh=MXU1MG1sYmc4YXcwMQ==",
+      label: "Latest reel",
     },
     {
-      id: "reel-4",
-      title: "Slow Summer",
-      description: "Gentle visual narrative for a modern, reflective audience.",
+      id: "reel-5",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
       thumbnail:
-        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
-      href: "https://www.instagram.com/",
-      label: "Weekly drop",
+        "/images/EP5.png",
+      href: "https://www.instagram.com/reel/DYex5TZpScQ/?igsh=MTZ6c3N3bjE5M2w2Mg==",
+      label: "Latest reel",
     },
+    {
+      id: "reel-6",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP4.png",
+      href: "https://www.instagram.com/reel/DYcNGxMp8iI/?igsh=MTAyamJsN3I5ZXU1cQ==",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-7",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP3.png",
+      href: "https://www.instagram.com/reel/DYZoRTPJGmi/?igsh=MXF0dTFnb3RsdW4xOQ==",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-8",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP2.png",
+      href: "https://www.instagram.com/reel/DYXDhEcpIXG/?igsh=dnJ1dWJ1eHk5empu",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-9",
+      title: "Adithya",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP1.png",
+      href: "https://www.instagram.com/reel/DYUesgQpret/?igsh=MWRlZzk5N3MyNW92cA==",
+      label: "Latest reel",
+    },
+    // {
+    //   id: "reel-2",
+    //   title: "Afterlight",
+    //   description: "Warm frames, cinematic pacing, and emotional clarity.",
+    //   thumbnail:
+    //     "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    //   href: "https://www.instagram.com/",
+    //   label: "New episode",
+    // },
+    // {
+    //   id: "reel-3",
+    //   title: "A Frame in Bloom",
+    //   description: "Editorial storytelling shaped around gesture and light.",
+    //   thumbnail:
+    //     "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
+    //   href: "https://www.instagram.com/",
+    //   label: "Behind the scenes",
+    // },
+    // {
+    //   id: "reel-4",
+    //   title: "Slow Summer",
+    //   description: "Gentle visual narrative for a modern, reflective audience.",
+    //   thumbnail:
+    //     "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+    //   href: "https://www.instagram.com/",
+    //   label: "Weekly drop",
+    // },
   ],
   philosophy: {
     headline:
