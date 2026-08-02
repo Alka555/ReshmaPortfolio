@@ -59,6 +59,47 @@ export default function HomePage() {
           <InstagramSlider items={siteContent.reels} />
         </section>
 
+        <section className="container px-6 md:px-12 max-w-7xl" aria-labelledby="storyverse-section">
+          <FadeIn>
+            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-soft-md">
+              <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="relative min-h-[320px] md:min-h-[420px]">
+                  <Image
+                    src="/images/Storyverse.jpeg"
+                    alt="Storyverse cover image"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="space-y-6 p-8 md:p-10 lg:p-12">
+                  <div className="space-y-3">
+                    <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Storyverse</p>
+                    <h2 className="font-heading text-3xl leading-tight text-white md:text-4xl">
+                      A living space for thoughts, feelings, and the stories that stay with you.
+                    </h2>
+                  </div>
+
+                  <p className="max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
+                    Storyverse is a personal corner for prose, poetry, reflections, and reviews—built around emotion, blue tones, and the feeling of being deeply understood.
+                  </p>
+
+                  <a
+                    href="https://www.instagram.com/storyverse_._?igsh=NGxvaDVhY255Yjkz"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center text-[10px] uppercase tracking-[0.2em] text-gold transition-colors duration-300 hover:text-white"
+                  >
+                    Visit Storyverse
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </section>
+
         <section className="border-y border-white/10 bg-white/[0.02] py-16 md:py-24">
           <div className="container max-w-7xl px-6 md:px-12">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">

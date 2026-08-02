@@ -5,7 +5,7 @@ import { CTABanner } from "@/components/common/cta-banner";
 import { SectionHeader } from "@/components/common/section-header";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BlurReveal } from "@/components/motion/blur-reveal";
-import { Film, Feather, Sparkles, Lightbulb } from "lucide-react";
+import { Film, Feather, Sparkles, Lightbulb, ArrowUpRight } from "lucide-react";
 import React from "react";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <BlurReveal>
               <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-slate shadow-soft-lg bg-navy">
                 <Image
-                  src="/images/reshma-portrait.jpg"
+                  src="/images/selfPotrait.jpeg"
                   alt="Portrait photograph of Reshma Muraleedharan Tp — Content Creator and writer"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
@@ -64,6 +64,36 @@ export default function AboutPage() {
               </div>
             </BlurReveal>
           </div>
+        </section>
+
+        <section aria-labelledby="storyverse-heading" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-6">
+          <SectionHeader
+            badgeTag="Personal Project"
+            title="Storyverse"
+            subtitle="A space for thoughts, emotions, and stories that grow from within."
+          />
+
+          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              Storyverse is an Instagram space created by Reshma Muraleedharan Tp to hold the thoughts, emotions, and stories that live inside her. Every post—whether it is a story, prose, poetry, or a review—comes from a deeply personal place.
+            </p>
+            <p>
+              The name Storyverse was chosen intentionally because it does not belong to one single genre. It is a home for many moods, many voices, and many kinds of storytelling.
+            </p>
+            <p>
+              Blue is also a meaningful part of its identity, and it shaped the visual language of the Storyverse logo from the beginning.
+            </p>
+          </div>
+
+          <a
+            href="https://www.instagram.com/storyverse_._?igsh=NGxvaDVhY255Yjkz"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.24em] text-gold transition-colors hover:text-gold/80"
+          >
+            Visit Storyverse
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
         </section>
 
         <section aria-label="Creative philosophy" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-8">
