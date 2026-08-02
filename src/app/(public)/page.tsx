@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarDays, MessageCircleMore, MapPin } from "lucide-react";
 import { generatePageMetadata, websiteJsonLd, personJsonLd } from "@/lib/seo";
 import {
   siteContent,
@@ -31,6 +31,58 @@ export default function HomePage() {
   const writing = featuredWriting;
   const awards = staticAwards;
   const testimonials = staticTestimonials;
+  const services = [
+    {
+      title: "Brand films",
+      description:
+        "Cinematic short-form stories tailored for launches, campaigns, and product narratives that feel polished and memorable.",
+      image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      title: "Content strategy",
+      description:
+        "Thoughtful concepts, messaging systems, and narrative direction that give your ideas shape before they ever reach the screen.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      title: "Copy & scripting",
+      description:
+        "Emotionally grounded words for films, reels, interviews, and digital content that sound clear, human, and intentional.",
+      image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      title: "Social storytelling",
+      description:
+        "A calm, considered approach to building a meaningful online presence through stories, visuals, and consistent voice.",
+      image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80",
+    },
+  ];
+
+  const approachSteps = [
+    {
+      title: "Listen",
+      description:
+        "I start by understanding your audience, your goals, and the feeling you want your work to carry.",
+    },
+    {
+      title: "Define",
+      description:
+        "Together we shape the core message, visual direction, and narrative structure so the work feels focused from the start.",
+    },
+    {
+      title: "Build",
+      description:
+        "I develop the concept, script, and visual language with care, attention, and a clear sense of rhythm.",
+    },
+    {
+      title: "Improve",
+      description:
+        "We refine the details until the story lands with clarity, emotion, and the right impact.",
+    },
+  ];
+
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919876543210";
+  const whatsappHref = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`;
 
   return (
     <>
@@ -235,6 +287,138 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Services & Approach */}
+        <section className="container px-6 md:px-12 max-w-7xl space-y-8">
+          <FadeIn>
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)]">
+              <div className="max-w-3xl">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-gold">What I Can Do</p>
+                <h2 className="mt-4 font-heading text-3xl leading-tight text-white md:text-4xl">
+                  Services shaped around clarity, feeling, and momentum.
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-white/65">
+                  Every project is built to feel intentional, cinematic, and true to the story behind it.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-5 md:grid-cols-2">
+                {services.map((service, index) => (
+                  <div
+                    key={service.title}
+                    className="group overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/[0.025]"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <p className="text-[10px] uppercase tracking-[0.24em] text-gold">0{index + 1}</p>
+                        <h3 className="mt-2 font-heading text-xl text-white">{service.title}</h3>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <p className="text-sm leading-relaxed text-white/70">{service.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.08}>
+            <div className="rounded-[2rem] border border-white/10 bg-midnight/30 p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.4)]">
+              <div className="max-w-3xl">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-gold">My approach</p>
+                <h2 className="mt-4 font-heading text-3xl leading-tight text-white md:text-4xl">
+                  A process that keeps the story clear, human, and alive.
+                </h2>
+              </div>
+
+              <div className="mt-8 grid gap-4 lg:grid-cols-2">
+                {approachSteps.map((step, index) => (
+                  <div
+                    key={step.title}
+                    className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-6"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-sm font-semibold text-gold">
+                        {index + 1}
+                      </div>
+                      <h3 className="font-heading text-xl text-white">{step.title}</h3>
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-white/70">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </section>
+
+        <section className="container px-6 md:px-12 max-w-7xl">
+          <FadeIn>
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)]">
+              <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                <div className="max-w-2xl">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-gold">Ready to start</p>
+                  <h2 className="mt-3 font-heading text-3xl leading-tight text-white md:text-4xl">
+                    Let&apos;s begin a project that feels honest and lasting.
+                  </h2>
+                </div>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center text-[10px] uppercase tracking-[0.2em] text-gold transition-colors duration-300 hover:text-white"
+                >
+                  Contact me
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                <a
+                  href="https://www.google.com/maps/search/kochi"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
+                >
+                  <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                  <div>
+                    <h3 className="text-sm font-semibold text-white">Visit me in Kochi</h3>
+                    <p className="mt-1 text-sm text-white/60">Available for meetings and collaborations in Kochi.</p>
+                  </div>
+                </a>
+
+                <a
+                  href="/contact"
+                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
+                >
+                  <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                  <div>
+                    <h3 className="text-sm font-semibold text-white">Book an appointment</h3>
+                    <p className="mt-1 text-sm text-white/60">Choose a time for a conversation about your idea.</p>
+                  </div>
+                </a>
+
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
+                >
+                  <MessageCircleMore className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                  <div>
+                    <h3 className="text-sm font-semibold text-white">Chat on WhatsApp</h3>
+                    <p className="mt-1 text-sm text-white/60">Start a quick conversation anytime on WhatsApp.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </FadeIn>
         </section>
 
         {/* Awards & Testimonials */}
