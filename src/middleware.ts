@@ -32,9 +32,13 @@ export async function middleware(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user = null;
+  try {
+    const response = await supabase.auth.getUser();
+    user = response?.data?.user ?? null;
+  } catch {
+    return supabaseResponse;
+  }
 
   // Guard all /admin/dashboard/* routes. Allow /admin/login to pass through.
   if (
