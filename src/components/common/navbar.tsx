@@ -31,8 +31,8 @@ export function Navbar({ className }: NavbarProps) {
         className
       )}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
-        <Link href="/" className="font-heading text-lg font-semibold uppercase tracking-[0.28em] text-white transition-colors hover:text-gold">
+      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="font-heading text-base font-semibold uppercase tracking-[0.28em] text-white transition-colors hover:text-gold sm:text-lg">
           {/* {siteConfig.name} */}
           Reshma Muraleedharan Tp
         </Link>
@@ -74,7 +74,7 @@ export function Navbar({ className }: NavbarProps) {
       </div>
 
       {mobileOpen ? (
-        <div className="border-t border-white/10 bg-midnight/95 px-6 py-8 backdrop-blur-2xl md:hidden">
+        <div className="border-t border-white/10 bg-midnight/95 px-4 py-8 backdrop-blur-2xl sm:px-6 md:hidden">
           <nav aria-label="Mobile Navigation" className="flex flex-col gap-4">
             {siteConfig.navLinks.map((link) => {
               const isActive = pathname === link.href;

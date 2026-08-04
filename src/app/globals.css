@@ -20,9 +20,12 @@
   body {
     @apply bg-background text-foreground font-body antialiased selection:bg-gold/30 selection:text-white;
     background-image:
-      radial-gradient(circle at top left, rgba(126, 200, 255, 0.16), transparent 28%),
-      linear-gradient(135deg, #050d18 0%, #091a2f 35%, #10385d 70%, #1d4e7a 100%);
+      radial-gradient(circle at top left, rgba(159, 208, 255, 0.42), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(95, 143, 190, 0.24), transparent 28%),
+      linear-gradient(135deg, #183f67 0%, #2e6da7 42%, #5f8fbe 78%, #9fd0ff 100%);
     background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     min-height: 100vh;
     overflow-x: hidden;
     /* Ensure GPU compositing layer for scroll */
@@ -86,6 +89,12 @@
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 
 /* Reduced motion: disable all transitions for users who prefer it */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

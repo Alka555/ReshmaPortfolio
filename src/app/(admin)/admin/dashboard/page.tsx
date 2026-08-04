@@ -22,7 +22,7 @@ export default async function AdminDashboardPage() {
   const messages = messagesRes.data || [];
   const awards = awardsRes.data || [];
 
-  const unreadMessagesCount = messages.filter((m) => !m.is_archived).length;
+  const unreadMessagesCount = messages.filter((m: { is_archived?: boolean }) => !m.is_archived).length;
 
   return (
     <div className="space-y-8 pb-16">

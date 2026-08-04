@@ -33,10 +33,10 @@ export function HeroPortrait({
   const hasSocial = Boolean(socialLinks?.instagram || socialLinks?.facebook || socialLinks?.linkedin);
 
   return (
-    <div className={cn("rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-[0_30px_90px_-35px_rgba(3,10,24,0.9)] backdrop-blur-xl", className)}>
+    <div className={cn("rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-2 shadow-[0_30px_90px_-35px_rgba(3,10,24,0.9)] backdrop-blur-xl sm:rounded-[2rem] sm:p-3", className)}>
       <div className="overflow-hidden rounded-[1.45rem] border border-white/10 bg-midnight/70">
         {imageSrc ? (
-          <div className="relative aspect-[3/4] min-h-[420px] w-full">
+          <div className="relative aspect-[4/5] min-h-[320px] w-full sm:aspect-[3/4] sm:min-h-[420px]">
             <Image
               src={imageSrc}
               alt={alt}
@@ -48,7 +48,7 @@ export function HeroPortrait({
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,17,31,0.1)_0%,rgba(7,17,31,0.55)_100%)]" />
           </div>
         ) : (
-          <div className="flex aspect-[3/4] min-h-[420px] flex-col items-start justify-end bg-[radial-gradient(circle_at_top_left,rgba(126,200,255,0.2),transparent_45%),linear-gradient(135deg,#091425_0%,#11243f_100%)] p-8 text-left">
+          <div className="flex aspect-[4/5] min-h-[320px] flex-col items-start justify-end bg-[radial-gradient(circle_at_top_left,rgba(126,200,255,0.2),transparent_45%),linear-gradient(135deg,#091425_0%,#11243f_100%)] p-6 text-left sm:aspect-[3/4] sm:min-h-[420px] sm:p-8">
             <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Portrait pending</p>
             <h3 className="mt-3 font-heading text-3xl leading-tight text-white">A defined portrait will anchor this story.</h3>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
@@ -58,7 +58,7 @@ export function HeroPortrait({
         )}
       </div>
 
-      <div className="space-y-5 p-5 sm:p-6">
+      <div className="space-y-5 p-4 sm:p-6">
         <div className="space-y-2">
           <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Profile</p>
           <h3 className="font-heading text-2xl text-white">{name}</h3>

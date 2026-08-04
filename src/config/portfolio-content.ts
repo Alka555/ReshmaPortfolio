@@ -8,10 +8,13 @@ export const siteContent = {
     "Creating ad films, product videos, and social content that help brands engage audiences and make a lasting impact.",
   showreelUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   showreelThumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=85",
+  // heroBackgroundImage:
+  //   "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=2400&q=85",
   heroBackgroundImage:
-    "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=2400&q=85",
-  portraitImage:
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
+    "/images/herobg.png",
+  // portraitImage:
+  //   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
+  portraitImage: "/images/selfPotrait.jpeg",
   introEyebrow: "Portrait intro",
   introTitle: "I build cinematic worlds that feel intimate, clear, and quietly unforgettable.",
   introDescription:
@@ -35,6 +38,7 @@ export const siteContent = {
     },
   ],
   reels: [
+    [
     {
       id: "reel-1",
       title: "Adithya",
@@ -141,7 +145,114 @@ export const siteContent = {
     //   href: "https://www.instagram.com/",
     //   label: "Weekly drop",
     // },
-  ],
+  ],[
+    {
+      id: "reel-1",
+      title: "The Delivery Stroy",
+      description: "From city lights to the goodness of village life, Adithya's journey takes an unexpected turn. Will her world collide with Anandan's pure heart? A female perspective on love and finding home🌸",
+      thumbnail:
+        "/images/placeholder.jpg",
+      href: "https://www.instagram.com/reel/DG0Qe3_TM8u/?igsh=MWR3bGs2MTJoazUwOQ==",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-2",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP8.png",
+      href: "https://www.instagram.com/reel/DGqA5BYTM3a/?igsh=dzI0Z2F4MjY3eWNw",
+      label: "Latest reel",
+    },{
+      id: "reel-3",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP7.png",
+      href: "https://www.instagram.com/reel/DGkwPluzdJx/?igsh=NHd1Yjc5dzN4OWNp",
+      label: "Latest reel",
+    },{
+      id: "reel-4",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP6.png",
+      href: "https://www.instagram.com/reel/DGSzNjYTzBU/?igsh=MXZva3lxeDR6MGd3MA==",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-5",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP5.png",
+      href: "https://www.instagram.com/reel/DGF6pv8ziTX/?igsh=cXBobTNleGdvMGZv",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-6",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP4.png",
+      href: "https://www.instagram.com/reel/DFuynv4TZYr/?igsh=ajhiZDE2Y2VwcXZq",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-7",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP3.png",
+      href: "https://www.instagram.com/reel/DFP0_rbz5Db/?igsh=MXVxNWNnZjk0Mml0dw==",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-8",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP2.png",
+      href: "https://www.instagram.com/reel/DFDFF4Tzfkm/?igsh=MTR6dG11cmh2YjBwdA==",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-9",
+      title: "The Delivery Stroy",
+      description: "A short-form study in atmosphere and stillness.",
+      thumbnail:
+        "/images/EP1.png",
+      href: "https://www.instagram.com/reel/DEmqzQPTeGU/?igsh=ZnN4dGUwNHhnODd2",
+      label: "Latest reel",
+    },
+    {
+      id: "reel-10",
+      title: "Afterlight",
+      description: "Warm frames, cinematic pacing, and emotional clarity.",
+      thumbnail:
+        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      href: "https://www.instagram.com/reel/DEHvse2TBXA/?igsh=MWNhNmdwOXU3Z3AweA==",
+      label: "New episode",
+    },
+    {
+      id: "reel-11",
+      title: "A Frame in Bloom",
+      description: "Editorial storytelling shaped around gesture and light.",
+      thumbnail:
+        "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
+      href: "https://www.instagram.com/reel/DDwb78VToor/?igsh=MWw1ZHQ4b2NjYmRxNg==",
+      label: "Behind the scenes",
+    },
+    {
+      id: "reel-12",
+      title: "Slow Summer",
+      description: "Gentle visual narrative for a modern, reflective audience.",
+      thumbnail:
+        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+      href: "https://www.instagram.com/reel/DC_uqluTLaY/?igsh=ZjhzbjZ6bnExYXo3",
+      label: "Weekly drop",
+    },
+  ],], 
   philosophy: {
     headline:
       "The most memorable films do not simply show something. They leave room for you to feel it.",
