@@ -103,7 +103,7 @@ export default async function AdminDashboardPage() {
               {messages.length === 0 ? (
                 <p className="text-xs text-muted-foreground italic">No messages received yet.</p>
               ) : (
-                messages.slice(0, 4).map((msg) => (
+                messages.slice(0, 4).map((msg: any) => (
                   <div key={msg.id} className="p-3.5 rounded-lg border border-slate bg-navy/30 space-y-1">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-bold text-white">{msg.name}</span>
@@ -131,7 +131,7 @@ export default async function AdminDashboardPage() {
               {projects.length === 0 ? (
                 <p className="text-xs text-muted-foreground italic">No projects created yet.</p>
               ) : (
-                projects.slice(0, 4).map((proj) => (
+                projects.slice(0, 4).map((proj : any) => (
                   <div key={proj.id} className="flex items-center justify-between p-3.5 rounded-lg border border-slate bg-navy/30">
                     <div>
                       <h4 className="text-sm font-bold text-white">{proj.title}</h4>
