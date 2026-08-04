@@ -5,11 +5,11 @@
 
 :root {
   /* Brand Raw Color Palette */
-  --color-midnight: #07111f;
-  --color-deep-navy: #0b1d38;
-  --color-slate: #11243f;
-  --color-gold: #7ec8ff;
-  --color-gold-hover: #a9dcff;
+  --color-midnight: #0c2a45;
+  --color-deep-navy: #0d2845;
+  --color-slate: #173f67;
+  --color-gold: #9fd0ff;
+  --color-gold-hover: #cdeeff;
 
   /* Text Token System */
   --color-text-primary: #ffffff;
@@ -44,14 +44,14 @@
   --shadow-gold-glow: 0 0 20px -2px rgba(212, 175, 55, 0.25);
 
   /* HSL Mappings for Tailwind CSS Variables */
-  --background: 215 63% 7%;
-  --foreground: 220 33% 98%;
+  --background: 209 45% 26%;
+  --foreground: 205 45% 98%;
 
-  --card: 220 32% 11%;
-  --card-foreground: 220 33% 98%;
+  --card: 209 35% 32%;
+  --card-foreground: 205 45% 98%;
 
-  --popover: 215 63% 7%;
-  --popover-foreground: 220 33% 98%;
+  --popover: 209 45% 26%;
+  --popover-foreground: 205 45% 98%;
 
   --primary: 45 64% 52%;
   --primary-foreground: 215 63% 7%;
@@ -68,9 +68,9 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 220 32% 15%;
-  --input: 220 32% 15%;
-  --ring: 45 64% 52%;
+  --border: 210 45% 72%;
+  --input: 210 45% 72%;
+  --ring: 205 90% 80%;
 
   --radius: 0.5rem;
 }

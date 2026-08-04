@@ -11,6 +11,7 @@ import Link from "next/link";
  */
 export interface CTABannerProps {
   heading?: string;
+  eyebrow?: string;
   description?: string;
   buttonLabel?: string;
   onAction?: () => void;
@@ -18,6 +19,7 @@ export interface CTABannerProps {
 }
 
 export function CTABanner({
+  eyebrow = "Get in touch",
   heading = "Let's create something worth watching.",
   description = "Available for select ad film productions, commercial product videos, and creative writing commissions.",
   buttonLabel = "Let's Collaborate",
@@ -33,6 +35,9 @@ export function CTABanner({
     >
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl space-y-3 text-center md:text-left">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-gold">
+            {eyebrow}
+          </p>
           <h3 className="font-heading text-3xl leading-[0.95] tracking-[-0.05em] text-white md:text-5xl">
             {heading}
           </h3>

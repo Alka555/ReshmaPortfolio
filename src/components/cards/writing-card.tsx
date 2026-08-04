@@ -28,7 +28,7 @@ export function WritingCard({
         href={targetUrl}
         target={isExternal ? "_blank" : "_self"}
         rel={isExternal ? "noopener noreferrer" : undefined}
-        className="flex flex-col justify-between h-full rounded-xl border border-slate bg-navy/40 p-6 shadow-soft-md transition-all duration-300 hover:border-gold/50 hover:shadow-soft-lg focus:outline-none focus:ring-1 focus:ring-gold"
+        className="flex flex-col justify-between h-full rounded-xl border border-slate bg-navy/40 p-4 shadow-soft-md transition-all duration-300 hover:border-gold/50 hover:shadow-soft-lg focus:outline-none focus:ring-1 focus:ring-gold sm:p-6"
       >
         <div className="space-y-4">
           {/* Header Row */}
@@ -56,7 +56,7 @@ export function WritingCard({
 
           {/* Title & Summary */}
           <div className="space-y-2">
-            <h3 className="font-heading text-lg md:text-xl font-bold text-white group-hover:text-gold transition-colors duration-200">
+            <h3 className="font-heading text-lg font-bold text-white transition-colors duration-200 group-hover:text-gold sm:text-xl">
               {writing.title}
             </h3>
             <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">

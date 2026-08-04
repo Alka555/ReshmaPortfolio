@@ -30,25 +30,25 @@ const config: Config = {
         background: "var(--color-midnight)",
         foreground: "var(--color-white)",
         midnight: {
-          DEFAULT: "#07111F",
-          900: "#0b1d38",
+          DEFAULT: "#08233a",
+          900: "#0f375c",
         },
         navy: {
-          DEFAULT: "#11243f",
-          surface: "#11243f",
+          DEFAULT: "#0e2f53",
+          surface: "#0c2a4a",
         },
         gold: {
-          DEFAULT: "#7EC8FF",
-          hover: "#A9DCFF",
-          dark: "#4FA8E6",
-          muted: "#7EC8FF33",
+          DEFAULT: "#9FD0FF",
+          hover: "#CDEEFF",
+          dark: "#5E93C9",
+          muted: "#9FD0FF33",
         },
         muted: {
           DEFAULT: "#8A94A6",
           foreground: "#8A94A6",
         },
         primary: {
-          DEFAULT: "#07111F",
+          DEFAULT: "#1D4E7A",
           foreground: "#FFFFFF",
         },
         secondary: {
@@ -60,8 +60,8 @@ const config: Config = {
           foreground: "hsl(var(--destructive-foreground))",
         },
         accent: {
-          DEFAULT: "#D4AF37",
-          foreground: "#07111F",
+          DEFAULT: "#9FD0FF",
+          foreground: "#1D4E7A",
         },
         card: {
           DEFAULT: "#101827",

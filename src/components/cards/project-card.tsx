@@ -51,7 +51,7 @@ export function ProjectCard({
         aria-label={`View project: ${project.title}`}
         className={cn(
           "flex flex-col h-full focus:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-midnight",
-          isEditorial ? "gap-6 rounded-[1.75rem] border border-white/10 bg-white/[0.025] p-4 shadow-[0_20px_70px_-35px_rgba(7,22,44,0.95)] transition-all duration-500 hover:border-gold/30 hover:bg-white/[0.045] md:p-6" : "border-t border-white/10 pt-6 hover:border-gold/40 transition-colors duration-500"
+          isEditorial ? "gap-5 rounded-[1.4rem] border border-white/10 bg-white/[0.025] p-3 shadow-[0_20px_70px_-35px_rgba(7,22,44,0.95)] transition-all duration-500 hover:border-gold/30 hover:bg-white/[0.045] sm:gap-6 sm:rounded-[1.75rem] sm:p-4 md:p-6" : "border-t border-white/10 pt-5 hover:border-gold/40 transition-colors duration-500 sm:pt-6"
         )}
       >
         <div
@@ -88,7 +88,7 @@ export function ProjectCard({
             <span>{project.client}</span>
             <span>{project.year}</span>
           </div>
-          <h3 className="font-heading text-2xl md:text-3xl font-medium tracking-[-0.04em] text-white group-hover:text-gold transition-colors duration-300 flex items-start justify-between gap-4">
+          <h3 className="font-heading text-xl font-medium tracking-[-0.04em] text-white transition-colors duration-300 group-hover:text-gold sm:text-2xl md:text-3xl flex items-start justify-between gap-4">
             <span>{project.title}</span>
             <ArrowUpRight className="h-5 w-5 shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 text-gold translate-y-1" />
           </h3>

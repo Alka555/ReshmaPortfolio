@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components/common/section-header";
 import { ContactForm } from "@/components/common/contact-form";
 import { createMessageAction } from "@/actions/messages.actions";
 import { FadeIn } from "@/components/motion/fade-in";
-import { Mail, Clock, MapPin, Phone, MessageCircle } from "lucide-react";
+import { Mail, Clock, MapPin, Phone, MessageCircle, MessageCircleMore, CalendarDays, ArrowRight } from "lucide-react";
 import React from "react";
 
 export default function ContactPage() {

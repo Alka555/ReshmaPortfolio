@@ -19,6 +19,7 @@ import { AwardCard } from "@/components/cards/award-card";
 import { TestimonialCard } from "@/components/cards/testimonial-card";
 import { FadeIn } from "@/components/motion/fade-in";
 import { InstagramSlider } from "../../components/common/instagram-slider";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Reshma Muraleedharan Tp — Content Creator, Writer & Freelancer",
@@ -31,6 +32,30 @@ export default function HomePage() {
   const writing = featuredWriting;
   const awards = staticAwards;
   const testimonials = staticTestimonials;
+  const reelItems = (siteContent.reels as unknown as Array<{
+    id: string;
+    title: string;
+    description: string;
+    thumbnail: string;
+    href: string;
+    label: string;
+  }>);
+  const reelGroupA = reelItems.slice(0, 4).map((item) => ({
+    id: item.id,
+    title: item.title,
+    description: item.description,
+    thumbnail: item.thumbnail,
+    href: item.href,
+    label: item.label,
+  }));
+  const reelGroupB = reelItems.slice(4).map((item) => ({
+    id: item.id,
+    title: item.title,
+    description: item.description,
+    thumbnail: item.thumbnail,
+    href: item.href,
+    label: item.label,
+  }));
   const services = [
     {
       title: "Brand films",
@@ -99,23 +124,23 @@ export default function HomePage() {
         subtitle={siteContent.heroSubtitle}
         tagline={siteContent.tagline}
         backgroundImage={siteContent.heroBackgroundImage}
-        portraitImage={siteContent.portraitImage}
+        portraitImage={siteContent.portraitImage || "/images/selfPotrait.jpeg"}
         heroHighlightTitle={siteContent.introTitle}
         heroDescription={siteContent.introDescription}
         heroQuote="Quiet confidence tells the story better than noise."
         heroSkills={siteContent.skills}
       />
 
-      <div className="space-y-24 pb-28 md:space-y-36 md:pb-36">
-        <section className="container px-6 md:px-12 max-w-7xl" aria-labelledby="reels-slider">
-          <InstagramSlider items={siteContent.reels} />
+      <div className="space-y-16 pb-20 sm:space-y-24 sm:pb-28 md:space-y-36 md:pb-36">
+        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="reels-slider">
+          <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
         </section>
 
-        <section className="container px-6 md:px-12 max-w-7xl" aria-labelledby="storyverse-section">
+        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="storyverse-section">
           <FadeIn>
-            <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-soft-md">
-              <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="relative min-h-[320px] md:min-h-[420px]">
+            <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/[0.03] shadow-soft-md sm:rounded-[2rem]">
+              <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="relative min-h-[240px] sm:min-h-[320px] md:min-h-[420px]">
                   <Image
                     src="/images/Storyverse.jpeg"
                     alt="Storyverse cover image"
@@ -125,7 +150,7 @@ export default function HomePage() {
                   />
                 </div>
 
-                <div className="space-y-6 p-8 md:p-10 lg:p-12">
+                <div className="space-y-6 p-5 sm:p-8 md:p-10 lg:p-12">
                   <div className="space-y-3">
                     <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Storyverse</p>
                     <h2 className="font-heading text-3xl leading-tight text-white md:text-4xl">
@@ -152,8 +177,8 @@ export default function HomePage() {
           </FadeIn>
         </section>
 
-        <section className="border-y border-white/10 bg-white/[0.02] py-16 md:py-24">
-          <div className="container max-w-7xl px-6 md:px-12">
+        <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
+          <div className="container max-w-7xl px-4 sm:px-6 md:px-12">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
               <FadeIn>
                 <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Creative philosophy</p>
@@ -171,9 +196,9 @@ export default function HomePage() {
         </section>
 
         {/* Featured Films */}
-        <section className="container px-6 md:px-12 max-w-7xl" aria-labelledby="featured-work">
+        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="featured-work">
           <FadeIn>
-            <div className="flex items-end justify-between gap-8 mb-16 md:mb-20">
+            <div className="mb-12 flex flex-col gap-4 sm:mb-16 sm:flex-row sm:items-end sm:justify-between md:mb-20">
               <SectionHeader
                 badgeTag="Selected films"
                 title="Frames with a point of view."
@@ -224,7 +249,7 @@ export default function HomePage() {
 
         {/* Showreel — full bleed */}
         <section id="showreel" aria-labelledby="showreel-heading">
-          <div className="container px-6 md:px-12 max-w-7xl mb-10">
+          <div className="container px-4 sm:px-6 md:px-12 max-w-7xl mb-8 sm:mb-10">
             <FadeIn>
               <SectionHeader
                 badgeTag="In motion"
@@ -247,8 +272,8 @@ export default function HomePage() {
         </section>
 
         {/* Writing */}
-        <section className="container px-6 md:px-12 max-w-7xl">
-          <div className="grid gap-16 lg:grid-cols-12 lg:gap-8">
+        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+          <div className="grid gap-10 sm:gap-16 lg:grid-cols-12 lg:gap-8">
             <FadeIn className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
               <SectionHeader
                 badgeTag="Words"
@@ -271,12 +296,12 @@ export default function HomePage() {
                     href={item.external_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block py-10 first:pt-0 last:pb-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold"
+                    className="group block py-8 first:pt-0 last:pb-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold sm:py-10"
                   >
                     <p className="text-[10px] uppercase tracking-[0.2em] text-gold">
                       {item.category_slug.replace(/-/g, " ")}
                     </p>
-                    <h3 className="mt-4 font-heading text-3xl md:text-4xl tracking-[-0.04em] text-white group-hover:text-gold transition-colors duration-300">
+                    <h3 className="mt-4 font-heading text-2xl tracking-[-0.04em] text-white transition-colors duration-300 group-hover:text-gold sm:text-3xl md:text-4xl">
                       {item.title}
                     </h3>
                     <p className="mt-4 max-w-lg text-sm md:text-base leading-relaxed text-white/50">
@@ -290,7 +315,7 @@ export default function HomePage() {
         </section>
 
         {/* Services & Approach */}
-        <section className="container px-6 md:px-12 max-w-7xl space-y-8">
+        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl space-y-8">
           <FadeIn>
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)]">
               <div className="max-w-3xl">
@@ -360,70 +385,9 @@ export default function HomePage() {
           </FadeIn>
         </section>
 
-        <section className="container px-6 md:px-12 max-w-7xl">
-          <FadeIn>
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)]">
-              <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                <div className="max-w-2xl">
-                  <p className="text-[10px] uppercase tracking-[0.25em] text-gold">Ready to start</p>
-                  <h2 className="mt-3 font-heading text-3xl leading-tight text-white md:text-4xl">
-                    Let&apos;s begin a project that feels honest and lasting.
-                  </h2>
-                </div>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center text-[10px] uppercase tracking-[0.2em] text-gold transition-colors duration-300 hover:text-white"
-                >
-                  Contact me
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-
-              <div className="mt-8 grid gap-4 md:grid-cols-3">
-                <a
-                  href="https://www.google.com/maps/search/kochi"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
-                >
-                  <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold" />
-                  <div>
-                    <h3 className="text-sm font-semibold text-white">Visit me in Kochi</h3>
-                    <p className="mt-1 text-sm text-white/60">Available for meetings and collaborations in Kochi.</p>
-                  </div>
-                </a>
-
-                <a
-                  href="/contact"
-                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
-                >
-                  <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-gold" />
-                  <div>
-                    <h3 className="text-sm font-semibold text-white">Book an appointment</h3>
-                    <p className="mt-1 text-sm text-white/60">Choose a time for a conversation about your idea.</p>
-                  </div>
-                </a>
-
-                <a
-                  href={whatsappHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
-                >
-                  <MessageCircleMore className="mt-1 h-5 w-5 shrink-0 text-gold" />
-                  <div>
-                    <h3 className="text-sm font-semibold text-white">Chat on WhatsApp</h3>
-                    <p className="mt-1 text-sm text-white/60">Start a quick conversation anytime on WhatsApp.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </FadeIn>
-        </section>
-
         {/* Awards & Testimonials */}
-        <section className="container px-6 md:px-12 max-w-7xl">
-          <div className="grid gap-20 md:grid-cols-[0.9fr_1.1fr] md:gap-24">
+        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+          <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-24">
             <FadeIn>
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-gold mb-10">
@@ -446,15 +410,78 @@ export default function HomePage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="container px-6 md:px-12 max-w-7xl">
+        {/* <section className="container px-6 md:px-12 max-w-7xl">
           <FadeIn>
             <CTABanner
+              eyebrow="Ready to start"
               heading="Let's make something that feels true."
               description="For collaborations, commissioned films and story-led work."
               buttonLabel="Start a conversation"
             />
           </FadeIn>
-        </section>
+        </section> */}
+        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+                <FadeIn>
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)] sm:rounded-[2rem] sm:p-8 md:p-10">
+                    <div className="flex flex-col gap-6 sm:items-start md:flex-row md:items-end md:justify-between">
+                      <div className="max-w-2xl">
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-gold">Ready to start</p>
+                        <h2 className="mt-3 font-heading text-2xl leading-tight text-white sm:text-3xl md:text-4xl">
+                          Let&apos;s begin a project that feels honest and lasting.
+                        </h2>
+                      </div>
+                    
+                      <Button
+          variant="primary"
+          size="lg"
+          asChild
+          className="group gap-2 shrink-0 rounded-full px-6"
+        >
+          <Link href="/contact">Start a conversation with me <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" /></Link>
+        </Button>
+                    </div>
+      
+                    <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                      <a
+                        href="https://www.google.com/maps/search/kochi"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
+                      >
+                        <MapPin className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                        <div>
+                          <h3 className="text-sm font-semibold text-white">Visit me in Kochi</h3>
+                          <p className="mt-1 text-sm text-white/60">Available for meetings and collaborations in Kochi.</p>
+                        </div>
+                      </a>
+      
+                      <a
+                        href="/contact"
+                        className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
+                      >
+                        <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                        <div>
+                          <h3 className="text-sm font-semibold text-white">Book an appointment</h3>
+                          <p className="mt-1 text-sm text-white/60">Choose a time for a conversation about your idea.</p>
+                        </div>
+                      </a>
+      
+                      <a
+                        href={whatsappHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-start gap-3 rounded-2xl border border-white/10 bg-midnight/30 p-4 transition-all duration-300 hover:border-gold/40 hover:bg-white/[0.05]"
+                      >
+                        <MessageCircleMore className="mt-1 h-5 w-5 shrink-0 text-gold" />
+                        <div>
+                          <h3 className="text-sm font-semibold text-white">Chat on WhatsApp</h3>
+                          <p className="mt-1 text-sm text-white/60">Start a quick conversation anytime on WhatsApp.</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </FadeIn>
+      </section>
       </div>
     </>
   );
