@@ -18,7 +18,7 @@ import { CTABanner } from "@/components/common/cta-banner";
 import { AwardCard } from "@/components/cards/award-card";
 import { TestimonialCard } from "@/components/cards/testimonial-card";
 import { FadeIn } from "@/components/motion/fade-in";
-import { InstagramSlider } from "../../components/common/instagram-slider";
+import { InstagramSlider, InstagramSliderItem } from "../../components/common/instagram-slider";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -32,30 +32,10 @@ export default function HomePage() {
   const writing = featuredWriting;
   const awards = staticAwards;
   const testimonials = staticTestimonials;
-  const reelItems = (siteContent.reels as unknown as Array<{
-    id: string;
-    title: string;
-    description: string;
-    thumbnail: string;
-    href: string;
-    label: string;
-  }>);
-  const reelGroupA = reelItems.slice(0, 4).map((item) => ({
-    id: item.id,
-    title: item.title,
-    description: item.description,
-    thumbnail: item.thumbnail,
-    href: item.href,
-    label: item.label,
-  }));
-  const reelGroupB = reelItems.slice(4).map((item) => ({
-    id: item.id,
-    title: item.title,
-    description: item.description,
-    thumbnail: item.thumbnail,
-    href: item.href,
-    label: item.label,
-  }));
+  type ReelGroup = readonly InstagramSliderItem[];
+  const reelItems = (siteContent.reels as readonly ReelGroup[]).flat() as readonly InstagramSliderItem[];
+  const reelGroupA = reelItems.slice(0, 4);
+  const reelGroupB = reelItems.slice(4);
   const services = [
     {
       title: "Brand films",
