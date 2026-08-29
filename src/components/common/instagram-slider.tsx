@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { AutoSlider } from "./auto-slider";
 
 export interface InstagramSliderItem {
   id: string;
@@ -35,52 +36,34 @@ export function InstagramSlider({ Ras, Moolans }: InstagramSliderProps) {
         </Link>
       </div>
 
-      <h2 className="mt-4 text-white/60">
-        Ras entertainment
-      </h2>
-      <div className="mt-8 flex gap-4 overflow-x-auto pb-3 no-scrollbar">
-        {Ras?.map((item :any) => (
-          <article key={item.id} className="group min-w-[260px] max-w-[280px] rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-3 shadow-[0_20px_60px_-35px_rgba(7,22,44,0.9)]">
-            <Link href={item.href} target="_blank" rel="noreferrer" className="block">
-              <div className="relative h-[320px] min-h-[320px] overflow-hidden rounded-[1.15rem] sm:h-[360px] sm:min-h-[360px]">
-                <Image src={item.thumbnail} alt={item.title} fill sizes="280px" className="object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent" />
-                <span className="absolute left-3 top-3 rounded-full border border-white/20 bg-midnight/50 px-2.5 py-1 text-[10px] uppercase tracking-[0.24em] text-white/80">
-                  {item.label}
-                </span>
-              </div>
-              <div className="mt-4 space-y-2">
-                <h4 className="font-heading text-lg text-white">{item.title}</h4>
-                <p className="text-sm leading-relaxed text-white/60">{item.description}</p>
-              </div>
-            </Link>
-          </article>
-        ))}
-      </div>
-      {/* ----------------------------------------------------------- */}
+      {Ras?.length > 0 && (
+        <div className="mt-12">
+          <div className="mb-6 flex items-center gap-4">
+            <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border border-white/10">
+              <Image
+                src="/images/ras.jpeg"
+                alt="Ras cover"
+                fill
+                sizes="96px"
+                className="object-cover"
+              />
+            </div>
+            <h2 className="text-sm uppercase tracking-widest text-white/40 font-medium">
+              Ras
+            </h2>
+          </div>
+          <AutoSlider items={Ras} baseVelocity={-0.6} />
+        </div>
+      )}
 
-      <h2 className="mt-4 text-white/60">
-        Moolans Famili Mart
-      </h2>
-      <div className="mt-8 flex gap-4 overflow-x-auto pb-3 no-scrollbar">
-        {Moolans?.map((item :any) => (
-          <article key={item.id} className="group min-w-[260px] max-w-[280px] rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-3 shadow-[0_20px_60px_-35px_rgba(7,22,44,0.9)]">
-            <Link href={item.href} target="_blank" rel="noreferrer" className="block">
-              <div className="relative h-[320px] min-h-[320px] overflow-hidden rounded-[1.15rem] sm:h-[360px] sm:min-h-[360px]">
-                <Image src={item.thumbnail} alt={item.title} fill sizes="280px" className="object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent" />
-                <span className="absolute left-3 top-3 rounded-full border border-white/20 bg-midnight/50 px-2.5 py-1 text-[10px] uppercase tracking-[0.24em] text-white/80">
-                  {item.label}
-                </span>
-              </div>
-              <div className="mt-4 space-y-2">
-                <h4 className="font-heading text-lg text-white">{item.title}</h4>
-                <p className="text-sm leading-relaxed text-white/60">{item.description}</p>
-              </div>
-            </Link>
-          </article>
-        ))}
-      </div>
+      {Moolans?.length > 0 && (
+        <div className="mt-8">
+          <h2 className="mb-6 text-sm uppercase tracking-widest text-white/40 font-medium">
+            Moolans Family Mart
+          </h2>
+          <AutoSlider items={Moolans} baseVelocity={-0.6} />
+        </div>
+      )}
     </section>
   );
 }
