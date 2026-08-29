@@ -33,9 +33,7 @@ export default function HomePage() {
   const awards = staticAwards;
   const testimonials = staticTestimonials;
   type ReelGroup = readonly InstagramSliderItem[];
-  const reelItems = (siteContent.reels as readonly ReelGroup[]).flat() as readonly InstagramSliderItem[];
-  const reelGroupA = reelItems.slice(0, 4);
-  const reelGroupB = reelItems.slice(4);
+  const [reelGroupA = [], reelGroupB = []] = siteContent.reels as readonly ReelGroup[];
   const services = [
     {
       title: "Brand films",
@@ -112,15 +110,12 @@ export default function HomePage() {
       />
 
       <div className="space-y-16 pb-20 sm:space-y-24 sm:pb-28 md:space-y-36 md:pb-36">
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="reels-slider">
-          <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
-        </section>
 
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="storyverse-section">
+        <section className="container px-3 py-4 sm:px-4 md:px-8" aria-labelledby="storyverse-section">
           <FadeIn>
             <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/[0.03] shadow-soft-md sm:rounded-[2rem]">
-              <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="relative min-h-[240px] sm:min-h-[320px] md:min-h-[420px]">
+              <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[25%_75%]">
+                <div className="relative h-full sm:min-h-[320px] md:min-h-[420px]">
                   <Image
                     src="/images/Storyverse.jpeg"
                     alt="Storyverse cover image"
@@ -134,13 +129,19 @@ export default function HomePage() {
                   <div className="space-y-3">
                     <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Storyverse</p>
                     <h2 className="font-heading text-3xl leading-tight text-white md:text-4xl">
-                      A living space for thoughts, feelings, and the stories that stay with you.
+                      A universe for the stories, feelings, and characters that live within me.
                     </h2>
                   </div>
 
-                  <p className="max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
-                    Storyverse is a personal corner for prose, poetry, reflections, and reviews—built around emotion, blue tones, and the feeling of being deeply understood.
-                  </p>
+                  <p className="text-base leading-relaxed text-white/65 md:text-lg">
+As a writer, I felt a deep desire to create a space for the thoughts, emotions, stories, and characters that quietly take shape within me. That desire eventually led me to create <i>Storyverse</i> — an Instagram space where I could give those ideas a life of their own.
+
+Every piece I share through <i>Storyverse</i> is close to my heart. It could be a story, prose, poetry, a review, or simply an idea that I felt compelled to put into words. It may resonate with some readers and not with others, and that is perfectly alright. I never wanted <i>Storyverse</i> to be confined to a particular genre or style. I wanted it to remain open to every kind of story that I might want to tell.
+
+That is also why I chose the name <i>Storyverse</i> — a universe of stories without boundaries.
+
+And there is a little piece of me in its identity too. Blue has always been my favourite colour, so naturally, it found its way into the <i>Storyverse</i> logo. It felt like the right colour for a space that holds so many different shades of thought, feeling, and imagination.
+             </p>
 
                   <a
                     href="https://www.instagram.com/storyverse_._?igsh=NGxvaDVhY255Yjkz"
@@ -157,8 +158,12 @@ export default function HomePage() {
           </FadeIn>
         </section>
 
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="reels-slider">
+          <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
+        </section>
+
         <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
-          <div className="container max-w-7xl px-4 sm:px-6 md:px-12">
+          <div className="container max-w-7xl px-3 sm:px-4 md:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
               <FadeIn>
                 <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Creative philosophy</p>
@@ -176,7 +181,7 @@ export default function HomePage() {
         </section>
 
         {/* Featured Films */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="featured-work">
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="featured-work">
           <FadeIn>
             <div className="mb-12 flex flex-col gap-4 sm:mb-16 sm:flex-row sm:items-end sm:justify-between md:mb-20">
               <SectionHeader
@@ -229,7 +234,7 @@ export default function HomePage() {
 
         {/* Showreel — full bleed */}
         <section id="showreel" aria-labelledby="showreel-heading">
-          <div className="container px-4 sm:px-6 md:px-12 max-w-7xl mb-8 sm:mb-10">
+          <div className="container px-3 sm:px-4 md:px-8 max-w-7xl mb-8 sm:mb-10">
             <FadeIn>
               <SectionHeader
                 badgeTag="In motion"
@@ -252,7 +257,7 @@ export default function HomePage() {
         </section>
 
         {/* Writing */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
           <div className="grid gap-10 sm:gap-16 lg:grid-cols-12 lg:gap-8">
             <FadeIn className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
               <SectionHeader
@@ -295,7 +300,7 @@ export default function HomePage() {
         </section>
 
         {/* Services & Approach */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl space-y-8">
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl space-y-8">
           <FadeIn>
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)]">
               <div className="max-w-3xl">
@@ -366,7 +371,7 @@ export default function HomePage() {
         </section>
 
         {/* Awards & Testimonials */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
           <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-24">
             <FadeIn>
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
@@ -400,7 +405,7 @@ export default function HomePage() {
             />
           </FadeIn>
         </section> */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
                 <FadeIn>
                   <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)] sm:rounded-[2rem] sm:p-8 md:p-10">
                     <div className="flex flex-col gap-6 sm:items-start md:flex-row md:items-end md:justify-between">

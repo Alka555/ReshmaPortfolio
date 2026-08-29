@@ -70,9 +70,9 @@ export function Hero({
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_10%,rgba(212,175,55,.08),transparent_50%)] pointer-events-none" />
 
-      <div className="container relative z-10 mx-auto flex min-h-[80svh] max-w-7xl flex-col justify-end px-4 sm:px-6 md:px-12">
-        <div className="grid items-end gap-8 sm:gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div className="max-w-3xl">
+      <div className="container relative z-10 mx-auto flex min-h-[80svh] max-w-7xl flex-col justify-end px-3 sm:px-4 md:px-8">
+        <div className="grid items-end gap-8 sm:gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          <div className="max-w-3xl lg:order-2">
             <BlurReveal>
               <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">
                 {tagline}
@@ -111,7 +111,7 @@ export function Hero({
           </div>
 
           {(portraitImage || heroDescription || heroQuote || heroSkills?.length) ? (
-            <BlurReveal delay={0.18}>
+            <BlurReveal delay={0.18} className="w-full lg:order-1 lg:max-w-sm">
               <HeroPortrait
                 imageSrc={portraitImage}
                 alt={portraitAlt}

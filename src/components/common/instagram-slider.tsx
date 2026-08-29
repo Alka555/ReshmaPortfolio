@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AutoSlider } from "./auto-slider";
@@ -37,9 +38,20 @@ export function InstagramSlider({ Ras, Moolans }: InstagramSliderProps) {
 
       {Ras?.length > 0 && (
         <div className="mt-12">
-          <h2 className="mb-6 text-sm uppercase tracking-widest text-white/40 font-medium">
-            Ras
-          </h2>
+          <div className="mb-6 flex items-center gap-4">
+            <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border border-white/10">
+              <Image
+                src="/images/ras.jpeg"
+                alt="Ras cover"
+                fill
+                sizes="96px"
+                className="object-cover"
+              />
+            </div>
+            <h2 className="text-sm uppercase tracking-widest text-white/40 font-medium">
+              Ras
+            </h2>
+          </div>
           <AutoSlider items={Ras} baseVelocity={-0.6} />
         </div>
       )}
