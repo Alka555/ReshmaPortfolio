@@ -11,7 +11,7 @@ export default function ContactPage() {
   const whatsappHref = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`;
 
   return (
-    <div className="container px-6 py-32 max-w-7xl md:px-12 md:py-40">
+    <div className="container px-4 py-32 max-w-7xl md:px-8 md:py-40">
       <div className="grid grid-cols-1 gap-8 items-start lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
         <div className="space-y-6 lg:sticky lg:top-28">
           <FadeIn>
