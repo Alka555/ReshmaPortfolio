@@ -134,13 +134,9 @@ export default function HomePage() {
                   </div>
 
                   <p className="text-base leading-relaxed text-white/65 md:text-lg">
-As a writer, I felt a deep desire to create a space for the thoughts, emotions, stories, and characters that quietly take shape within me. That desire eventually led me to create <i>Storyverse</i> — an Instagram space where I could give those ideas a life of their own.
+As a writer, I felt a deep desire to create a space for my thoughts, emotions, and the stories and characters that originate from within me. It was this decision that led me to create the Instagram account called 'Storyverse'. Every single post I share through 'Storyverse' is close to my heart. It could be a story, prose, poetry, or a review. It may or may not align with reader preferences. That is exactly why I insisted me to choosing the name 'Storyverse'. Because I wanted a name that didn't lean toward any one specific genre. 
 
-Every piece I share through <i>Storyverse</i> is close to my heart. It could be a story, prose, poetry, a review, or simply an idea that I felt compelled to put into words. It may resonate with some readers and not with others, and that is perfectly alright. I never wanted <i>Storyverse</i> to be confined to a particular genre or style. I wanted it to remain open to every kind of story that I might want to tell.
-
-That is also why I chose the name <i>Storyverse</i> — a universe of stories without boundaries.
-
-And there is a little piece of me in its identity too. Blue has always been my favourite colour, so naturally, it found its way into the <i>Storyverse</i> logo. It felt like the right colour for a space that holds so many different shades of thought, feeling, and imagination.
+Along with this, I would also like to mention another thing. Blue is my favorite color, and that is exactly why I chose blue for the 'Storyverse' logo.
              </p>
 
                   <a
@@ -162,7 +158,7 @@ And there is a little piece of me in its identity too. Blue has always been my f
           <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
         </section>
 
-        <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
+        {/* <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
           <div className="container max-w-7xl px-3 sm:px-4 md:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
               <FadeIn>
@@ -178,10 +174,10 @@ And there is a little piece of me in its identity too. Blue has always been my f
               </FadeIn>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Featured Films */}
-        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="featured-work">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="featured-work">
           <FadeIn>
             <div className="mb-12 flex flex-col gap-4 sm:mb-16 sm:flex-row sm:items-end sm:justify-between md:mb-20">
               <SectionHeader
@@ -230,10 +226,10 @@ And there is a little piece of me in its identity too. Blue has always been my f
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* Showreel — full bleed */}
-        <section id="showreel" aria-labelledby="showreel-heading">
+        {/* <section id="showreel" aria-labelledby="showreel-heading">
           <div className="container px-3 sm:px-4 md:px-8 max-w-7xl mb-8 sm:mb-10">
             <FadeIn>
               <SectionHeader
@@ -254,10 +250,10 @@ And there is a little piece of me in its identity too. Blue has always been my f
               />
             </div>
           </FadeIn>
-        </section>
+        </section> */}
 
         {/* Writing */}
-        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
           <div className="grid gap-10 sm:gap-16 lg:grid-cols-12 lg:gap-8">
             <FadeIn className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
               <SectionHeader
@@ -297,7 +293,7 @@ And there is a little piece of me in its identity too. Blue has always been my f
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Services & Approach */}
         <section className="container px-3 sm:px-4 md:px-8 max-w-7xl space-y-8">
@@ -371,7 +367,7 @@ And there is a little piece of me in its identity too. Blue has always been my f
         </section>
 
         {/* Awards & Testimonials */}
-        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
           <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-24">
             <FadeIn>
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
@@ -392,7 +388,7 @@ And there is a little piece of me in its identity too. Blue has always been my f
               </div>
             </FadeIn>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact CTA */}
         {/* <section className="container px-6 md:px-12 max-w-7xl">

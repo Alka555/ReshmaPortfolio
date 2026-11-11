@@ -6,8 +6,8 @@ import { Mail, Clock, MapPin, Phone, MessageCircle, MessageCircleMore, CalendarD
 import React from "react";
 
 export default function ContactPage() {
-  const phoneNumber = process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 98765 43210";
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919876543210";
+  const phoneNumber = process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 70343 54383";
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917034354383";
   const whatsappHref = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`;
 
   return (
@@ -29,8 +29,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-white">Email</h3>
-                    <a href="mailto:hello@reshmam.com" className="text-sm text-white/60 transition-colors hover:text-gold">
-                      hello@reshmam.com
+                    <a href="mailto:reshmamuraleedharantp@gmail.com" className="text-sm text-white/60 transition-colors hover:text-gold">
+                      reshmamuraleedharantp@gmail.com
                     </a>
                   </div>
                 </div>
@@ -82,12 +82,12 @@ export default function ContactPage() {
 
           <FadeIn delay={0.15}>
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 text-sm leading-relaxed text-white/65 shadow-[0_20px_60px_-30px_rgba(7,22,44,0.85)]">
-              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">Currently Accepting</p>
+              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">I can do these</p>
               <ul className="space-y-2 pl-5 text-sm text-white/70">
-                <li>Commercial ad film directing</li>
-                <li>Brand story and product videos</li>
-                <li>Instagram reel production</li>
-                <li>Screenplay and script commissions</li>
+                <li>Advertisement script</li>
+                <li>Concept video script</li>
+                <li>Insta reel series script</li>
+                <li>Brand promotion</li>
               </ul>
             </div>
           </FadeIn>
