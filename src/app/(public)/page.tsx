@@ -3,20 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarDays, MessageCircleMore, MapPin } from "lucide-react";
 import { generatePageMetadata, websiteJsonLd, personJsonLd } from "@/lib/seo";
-import {
-  siteContent,
-  featuredProjects,
-  featuredWriting,
-  staticAwards,
-  staticTestimonials,
-} from "@/config/portfolio-content";
+import { siteContent } from "@/config/portfolio-content";
 import { Hero } from "@/components/common/hero";
-import { SectionHeader } from "@/components/common/section-header";
-import { ProjectCard } from "@/components/cards/project-card";
-import { VideoEmbed } from "@/components/common/video-embed";
-import { CTABanner } from "@/components/common/cta-banner";
-import { AwardCard } from "@/components/cards/award-card";
-import { TestimonialCard } from "@/components/cards/testimonial-card";
 import { FadeIn } from "@/components/motion/fade-in";
 import { InstagramSlider, InstagramSliderItem } from "../../components/common/instagram-slider";
 import { Button } from "@/components/ui/button";
@@ -28,10 +16,6 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 export default function HomePage() {
-  const projects = featuredProjects;
-  const writing = featuredWriting;
-  const awards = staticAwards;
-  const testimonials = staticTestimonials;
   type ReelGroup = readonly InstagramSliderItem[];
   const [reelGroupA = [], reelGroupB = []] = siteContent.reels as readonly ReelGroup[];
   const services = [
@@ -134,9 +118,13 @@ export default function HomePage() {
                   </div>
 
                   <p className="text-base leading-relaxed text-white/65 md:text-lg">
-As a writer, I felt a deep desire to create a space for my thoughts, emotions, and the stories and characters that originate from within me. It was this decision that led me to create the Instagram account called 'Storyverse'. Every single post I share through 'Storyverse' is close to my heart. It could be a story, prose, poetry, or a review. It may or may not align with reader preferences. That is exactly why I insisted me to choosing the name 'Storyverse'. Because I wanted a name that didn't lean toward any one specific genre. 
+As a writer, I felt a deep desire to create a space for my thoughts, emotions, stories, and characters that quietly take shape within me. That desire eventually led me to create Storyverse — an Instagram space where I could give those ideas a life of their own.
 
-Along with this, I would also like to mention another thing. Blue is my favorite color, and that is exactly why I chose blue for the 'Storyverse' logo.
+Every piece I share through Storyverse is close to my heart. It could be a story, prose, poetry, a review, or simply an idea that I felt compelled to put into words. It may resonate with some readers and not with others, and that is perfectly alright. I wanted Storyverse to remain open to every kind of story that I might want to tell.
+
+That is also why I chose the name Storyverse — a universe of stories without boundaries.
+
+Blue has always been my favourite colour, and it naturally found its way into the Storyverse logo. It felt like the right colour for a space that holds so many different shades of thought, feeling, and imagination.
              </p>
 
                   <a

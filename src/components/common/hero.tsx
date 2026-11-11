@@ -80,6 +80,11 @@ export function Hero({
               <h1 className="font-heading text-[clamp(2.35rem,6vw,6.2rem)] font-medium leading-[0.92] tracking-[-0.06em] text-white">
                 {title}
               </h1>
+              {heroHighlightTitle ? (
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+                  {heroHighlightTitle}
+                </p>
+              ) : null}
             </BlurReveal>
 
             <BlurReveal delay={0.2}>
