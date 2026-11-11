@@ -1,63 +1,39 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { SectionHeader } from "@/components/common/section-header";
-import { CategoryFilter } from "@/components/common/category-filter";
-import { Search } from "@/components/common/search";
+// import { SectionHeader } from "@/components/common/section-header";
 import { ProjectCard } from "@/components/cards/project-card";
-import { WORK_CATEGORIES } from "@/config/constants";
-import { getProjectsAction } from "@/actions/projects.actions";
 import { Project } from "@/types/project";
 import { FadeIn } from "@/components/motion/fade-in";
-import { Skeleton } from "@/components/ui/skeleton";
-import { cmsEnabled, staticProjects } from "@/config/portfolio-content";
+import { siteContent, staticProjects } from "@/config/portfolio-content";
+import { InstagramSlider, InstagramSliderItem } from "@/components/common/instagram-slider";
 
 export default function WorkPage() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [projects, setProjects] = useState<Project[]>(() => {
-    if (!cmsEnabled) {
-      return (staticProjects as unknown as Project[]).filter((project) => project.published);
-    }
-    return [] as Project[];
-  });
-  const [loading, setLoading] = useState(!cmsEnabled);
+  // const featuredHomeProjects = (staticProjects as unknown as Project[])
+  //   .filter((project) => project.featured && project.published)
+  //   .filter((project) => project.category !== "instagram-reels")
+  //   .slice(0, 4);
 
-  useEffect(() => {
-    if (!cmsEnabled) {
-      setLoading(false);
-      return;
-    }
+  const reelProjects = (staticProjects as unknown as Project[])
+    .filter((project) => project.featured && project.published)
+    .filter((project) => project.category === "instagram-reels");
 
-    async function loadData() {
-      setLoading(true);
-      const res = await getProjectsAction({
-        category: activeCategory,
-        publishedOnly: true,
-      });
-      setProjects((res.data as unknown as Project[]) || []);
-      setLoading(false);
-    }
-    loadData();
-  }, [activeCategory]);
-
-  const filteredProjects = projects.filter((p) => {
-    const title = p.title?.toLowerCase() ?? "";
-    const client = p.client?.toLowerCase() ?? "";
-    const description = p.description?.toLowerCase() ?? "";
-    const query = searchQuery.toLowerCase();
-
-    return title.includes(query) || client.includes(query) || description.includes(query);
-  });
+  // Works content (same source as the home page "Works" slider)
+  type ReelGroup = readonly InstagramSliderItem[];
+  const [reelGroupA = [], reelGroupB = []] = siteContent.reels as readonly ReelGroup[];
 
   return (
-    <div className="container max-w-7xl px-6 md:px-12 py-32 md:py-40 space-y-16">
-      <SectionHeader
+    <div className="container max-w-7xl px-4 md:px-8 py-32 md:py-40 space-y-16">
+      {/* <SectionHeader
         badgeTag="Portfolio Archive"
         title="Selected work"
         subtitle="An editorial collection of films, campaigns, and motion-led stories shaped around mood, rhythm, and meaning."
-      />
+      /> */}
 
+      {/**
+       * Original work archive kept for reference.
+       * This block is intentionally commented out and preserved without deletion.
+       */}
+      {/*
       <div className="flex flex-col gap-6 border-y border-white/15 py-5 md:flex-row md:items-center md:justify-between">
         <CategoryFilter
           categories={WORK_CATEGORIES}
@@ -71,7 +47,6 @@ export default function WorkPage() {
         />
       </div>
 
-      {/* Projects Grid */}
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {Array.from({ length: 6 }).map((_, i) => (
@@ -98,6 +73,65 @@ export default function WorkPage() {
           ))}
         </div>
       )}
+      */}
+
+      {reelProjects.length > 0 && (
+        <div className="space-y-6">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Instagram reels</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-y-10 md:grid-cols-2 md:gap-8">
+            {reelProjects.map((project, idx) => (
+              <FadeIn key={project.id} delay={idx * 0.08}>
+                <ProjectCard
+                  project={project}
+                  variant="editorial"
+                  aspectRatio="9:16"
+                />
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Featured films — commented out, preserved without deletion */}
+      {/*
+      {featuredHomeProjects.length > 0 && (
+        <section className="space-y-10" aria-labelledby="featured-work">
+          <FadeIn>
+            <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between md:mb-10">
+              <SectionHeader
+                badgeTag="Selected films"
+                title="Frames with a point of view."
+                className="mb-0"
+              />
+            </div>
+          </FadeIn>
+
+          <div className="space-y-20 md:space-y-28">
+            {featuredHomeProjects.map((project, index) => (
+              <FadeIn key={project.id} delay={index * 0.08}>
+                <ProjectCard
+                  project={project}
+                  variant="editorial"
+                  index={index}
+                  aspectRatio={project.category === "instagram-reels" ? "9:16" : "16:9"}
+                  className={index % 2 === 1 ? "md:pl-[8%]" : ""}
+                />
+              </FadeIn>
+            ))}
+          </div>
+        </section>
+      )}
+      */}
+
+      {/* Works — same content as shown on the home page */}
+      <section aria-labelledby="works-slider">
+        <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
+      </section>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { Gallery } from "@/components/common/gallery";
 import { ProjectCard } from "@/components/cards/project-card";
 import { SectionHeader } from "@/components/common/section-header";
 import { Badge } from "@/components/ui/badge";
+import { ProjectMediaItem } from "@/types/project";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BlurReveal } from "@/components/motion/blur-reveal";
@@ -24,12 +25,22 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
 
   if (!project) return { title: "Project Not Found" };
 
+  const safeProject = {
+    title: project.title ?? "Untitled Project",
+    client: project.client ?? "Independent Client",
+    description: project.description ?? "Creative portfolio project.",
+    thumbnail: project.thumbnail ?? "/og-default.jpg",
+    slug: project.slug ?? slug,
+    category_slug: project.category_slug ?? "ad-films",
+    year: Number(project.year ?? 2025),
+  };
+
   return generatePageMetadata({
-    title: `${project.title} — ${project.client}`,
-    description: project.description,
-    image: project.thumbnail,
-    path: `/work/${project.slug}`,
-    keywords: [project.client, project.category_slug, "ad film", "commercial", "Reshma Muraleedharan Tp"],
+    title: `${safeProject.title} — ${safeProject.client}`,
+    description: safeProject.description,
+    image: safeProject.thumbnail,
+    path: `/work/${safeProject.slug}`,
+    keywords: [safeProject.client, safeProject.category_slug, "ad film", "commercial", "Reshma Muraleedharan Tp"],
   });
 }
 
@@ -39,19 +50,63 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   if (!project) notFound();
 
+  const safeProject = {
+    title: project.title ?? "Untitled Project",
+    client: project.client ?? "Independent Client",
+    description: project.description ?? "Creative portfolio project.",
+    thumbnail: project.thumbnail ?? "/og-default.jpg",
+    slug: project.slug ?? slug,
+    category_slug: project.category_slug ?? "ad-films",
+    year: Number(project.year ?? 2025),
+  };
+
   const { data: relatedProjects = [] } = await getProjectsAction({
     category: project.category_slug,
     publishedOnly: true,
   });
 
-  const filteredRelated = relatedProjects.filter((p) => p.id !== project.id).slice(0, 3);
+  const galleryItems: ProjectMediaItem[] = (project.project_media ?? []).map((item, index) => ({
+    id: item.id ?? `media-${index}`,
+    projectId: project.id ?? "unknown",
+    mediaUrl: item.media_url ?? "",
+    caption: item.caption ?? "",
+    displayOrder: item.display_order ?? index + 1,
+    mediaType: item.media_type === "video" ? "video" : "image",
+  }));
+
+  type ProjectSummary = {
+    id: string;
+    slug: string;
+    title: string;
+    client: string;
+    year: number;
+    description: string;
+    thumbnail: string;
+    category_slug?: string;
+    featured?: boolean;
+  };
+
+  const filteredRelated: ProjectSummary[] = relatedProjects
+    .filter((p) => p.id !== project.id)
+    .slice(0, 3)
+    .map((p) => ({
+      id: p.id ?? "",
+      slug: p.slug ?? "",
+      title: p.title ?? "Untitled Project",
+      client: p.client ?? "Independent Client",
+      year: Number(p.year ?? 2025),
+      description: p.description ?? "Creative portfolio project.",
+      thumbnail: p.thumbnail ?? "/og-default.jpg",
+      category_slug: p.category_slug ?? undefined,
+      featured: p.featured ?? false,
+    }));
 
   return (
     <>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd(project)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd(safeProject)) }}
       />
 
       <article className="container max-w-6xl space-y-16 py-24 md:py-32">
@@ -147,7 +202,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </FadeIn>
 
         {/* Behind-The-Scenes Gallery */}
-        {project.project_media && project.project_media.length > 0 && (
+        {galleryItems.length > 0 && (
           <FadeIn delay={0.15}>
             <section aria-label="Behind the scenes photography gallery" className="space-y-6">
               <SectionHeader
@@ -155,7 +210,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 title="Behind The Scenes"
                 subtitle="Photography and candid moments captured during the shoot — where stories begin before the edit."
               />
-              <Gallery items={project.project_media} columns={3} />
+              <Gallery items={galleryItems} columns={3} />
             </section>
           </FadeIn>
         )}
@@ -169,7 +224,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               subtitle="More films and creative productions in this category."
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {filteredRelated.map((rel, idx) => (
+              {filteredRelated.map((rel: ProjectSummary, idx: number) => (
                 <FadeIn key={rel.id} delay={idx * 0.1}>
                   <ProjectCard project={rel} />
                 </FadeIn>

@@ -18,7 +18,7 @@ export function Footer({ className }: FooterProps) {
         className
       )}
     >
-      <div className="container px-6 md:px-12 max-w-7xl">
+      <div className="container px-4 md:px-8 max-w-7xl">
         <div className="grid gap-12 md:grid-cols-12 md:gap-8 items-end">
           <div className="md:col-span-5 space-y-4">
             <Link

@@ -20,6 +20,7 @@ export interface ProjectCardProps {
     category_slug?: string;
     video_url?: string;
     videoUrl?: string;
+    external_url?: string;
   };
   aspectRatio?: "16:9" | "9:16" | "4:3";
   variant?: "default" | "editorial";
@@ -44,45 +45,41 @@ export function ProjectCard({
 
   const isEditorial = variant === "editorial";
 
-  return (
-    <ScaleHover scale={1.008} className={cn("group h-full", className)}>
-      <Link
-        href={`/work/${project.slug}`}
-        aria-label={`View project: ${project.title}`}
+  const innerContent = (
+    <>
+      <div
         className={cn(
-          "flex flex-col h-full focus:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-midnight",
-          isEditorial ? "gap-5 rounded-[1.4rem] border border-white/10 bg-white/[0.025] p-3 shadow-[0_20px_70px_-35px_rgba(7,22,44,0.95)] transition-all duration-500 hover:border-gold/30 hover:bg-white/[0.045] sm:gap-6 sm:rounded-[1.75rem] sm:p-4 md:p-6" : "border-t border-white/10 pt-5 hover:border-gold/40 transition-colors duration-500 sm:pt-6"
+          "relative w-full overflow-hidden bg-navy",
+          aspectClasses[aspectRatio],
+          isEditorial && index % 2 === 1 && "md:ml-auto md:w-[92%]"
         )}
       >
-        <div
+        <Image
+          src={project.thumbnail}
+          alt={project.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"
           className={cn(
-            "relative w-full overflow-hidden bg-navy",
-            aspectClasses[aspectRatio],
-            isEditorial && index % 2 === 1 && "md:ml-auto md:w-[92%]"
+            "transition-transform duration-[800ms] ease-cinematic group-hover:scale-[1.04]",
+            category === "instagram-reels" ? "object-contain" : "object-cover"
           )}
-        >
-          <Image
-            src={project.thumbnail}
-            alt={project.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 45vw"
-            className="object-cover transition-transform duration-[800ms] ease-cinematic group-hover:scale-[1.04]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500" />
 
-          {videoUrl && (
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="w-14 h-14 rounded-full border border-gold/60 bg-midnight/50 backdrop-blur-sm text-gold flex items-center justify-center">
-                <Play className="h-5 w-5 fill-current translate-x-0.5" />
-              </div>
+        {videoUrl && (
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="w-14 h-14 rounded-full border border-gold/60 bg-midnight/50 backdrop-blur-sm text-gold flex items-center justify-center">
+              <Play className="h-5 w-5 fill-current translate-x-0.5" />
             </div>
-          )}
+          </div>
+        )}
 
-          <span className="absolute top-5 left-5 text-[10px] uppercase tracking-[0.2em] text-white/80">
-            {category.replace(/-/g, " ")}
-          </span>
-        </div>
+        <span className="absolute top-5 left-5 text-[10px] uppercase tracking-[0.2em] text-white/80">
+          {category.replace(/-/g, " ")}
+        </span>
+      </div>
 
+      {category !== "instagram-reels" && (
         <div className={cn("space-y-3", isEditorial && "md:max-w-md")}>
           <div className="flex items-baseline justify-between gap-4 text-[10px] uppercase tracking-[0.18em] text-white/45">
             <span>{project.client}</span>
@@ -96,7 +93,36 @@ export function ProjectCard({
             {project.description}
           </p>
         </div>
-      </Link>
+      )}
+    </>
+  );
+
+  const wrapperClass = cn(
+    "flex flex-col h-full focus:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-4 focus-visible:ring-offset-midnight",
+    isEditorial ? "gap-5 rounded-[1.4rem] border border-white/10 bg-white/[0.025] p-3 shadow-[0_20px_70px_-35px_rgba(7,22,44,0.95)] transition-all duration-500 hover:border-gold/30 hover:bg-white/[0.045] sm:gap-6 sm:rounded-[1.75rem] sm:p-4 md:p-6" : "border-t border-white/10 pt-5 hover:border-gold/40 transition-colors duration-500 sm:pt-6"
+  );
+
+  return (
+    <ScaleHover scale={1.008} className={cn("group h-full", className)}>
+      {project.external_url ? (
+        <a
+          href={project.external_url}
+          aria-label={`View project: ${project.title}`}
+          className={wrapperClass}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {innerContent}
+        </a>
+      ) : (
+        <Link
+          href={`/work/${project.slug}`}
+          aria-label={`View project: ${project.title}`}
+          className={wrapperClass}
+        >
+          {innerContent}
+        </Link>
+      )}
     </ScaleHover>
   );
 }

@@ -40,7 +40,7 @@ export default function WritingPage() {
   }, [activeCategory]);
 
   return (
-    <div className="container max-w-7xl px-6 md:px-12 py-32 md:py-40 space-y-16">
+    <div className="container max-w-7xl px-4 md:px-8 py-32 md:py-40 space-y-16">
       <SectionHeader
         badgeTag="Words & Scripts"
         title="Writing"

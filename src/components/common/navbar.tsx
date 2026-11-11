@@ -31,11 +31,7 @@ export function Navbar({ className }: NavbarProps) {
         className
       )}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="font-heading text-base font-semibold uppercase tracking-[0.28em] text-white transition-colors hover:text-gold sm:text-lg">
-          {/* {siteConfig.name} */}
-          Reshma Muraleedharan Tp
-        </Link>
+      <div className="container mx-auto flex items-center justify-between px-3 sm:px-4">
 
         <nav aria-label="Main Navigation" className="hidden items-center gap-7 md:flex">
           {siteConfig.navLinks.map((link) => {
@@ -61,6 +57,11 @@ export function Navbar({ className }: NavbarProps) {
             );
           })}
         </nav>
+
+        <Link href="/" className="font-heading text-base font-semibold uppercase tracking-[0.28em] text-white transition-colors hover:text-gold sm:text-lg">
+          {/* {siteConfig.name} */}
+          Reshma Muraleedharan Tp
+        </Link>
 
         <button
           type="button"
