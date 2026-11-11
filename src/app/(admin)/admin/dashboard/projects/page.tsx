@@ -65,7 +65,7 @@ export default async function AdminProjectsPage() {
         <DataTable
           data={projects}
           columns={columns}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id ?? ""}
           emptyText="No portfolio projects added yet."
         />
       </div>

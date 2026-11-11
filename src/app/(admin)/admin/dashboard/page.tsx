@@ -22,23 +22,7 @@ export default async function AdminDashboardPage() {
   const messages = messagesRes.data || [];
   const awards = awardsRes.data || [];
 
-  const unreadMessagesCount = messages.filter((m: MessageItem) => !m.is_archived).length;
-
-  type MessageItem = {
-    id: string;
-    name: string;
-    email: string;
-    message: string;
-    is_archived?: boolean;
-  };
-
-  type ProjectItem = {
-    id: string;
-    title: string;
-    client: string;
-    year: string | number;
-    category_slug: string;
-  };
+  const unreadMessagesCount = messages.filter((m) => !m.is_archived).length;
 
   return (
     <div className="space-y-8 pb-16">
@@ -119,7 +103,7 @@ export default async function AdminDashboardPage() {
               {messages.length === 0 ? (
                 <p className="text-xs text-muted-foreground italic">No messages received yet.</p>
               ) : (
-                messages.slice(0, 4).map((msg: MessageItem) => (
+                messages.slice(0, 4).map((msg) => (
                   <div key={msg.id} className="p-3.5 rounded-lg border border-slate bg-navy/30 space-y-1">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-bold text-white">{msg.name}</span>
@@ -147,7 +131,7 @@ export default async function AdminDashboardPage() {
               {projects.length === 0 ? (
                 <p className="text-xs text-muted-foreground italic">No projects created yet.</p>
               ) : (
-                projects.slice(0, 4).map((proj: ProjectItem) => (
+                projects.slice(0, 4).map((proj) => (
                   <div key={proj.id} className="flex items-center justify-between p-3.5 rounded-lg border border-slate bg-navy/30">
                     <div>
                       <h4 className="text-sm font-bold text-white">{proj.title}</h4>

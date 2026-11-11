@@ -393,6 +393,7 @@ export const staticProjects = [
 export const staticWriting = [
   {
     id: "w1",
+    slug: "on-looking-long-enough",
     title: "On looking long enough",
     category_slug: "blogs",
     summary: "A note on patience, observation and the frame before the frame.",
@@ -405,6 +406,7 @@ export const staticWriting = [
   },
   {
     id: "w2",
+    slug: "the-language-of-quiet",
     title: "The language of quiet",
     category_slug: "creative-writing",
     summary: "Why restraint can carry more feeling than spectacle.",
@@ -417,6 +419,7 @@ export const staticWriting = [
   },
   {
     id: "w3",
+    slug: "notes-from-the-edit",
     title: "Notes from the edit",
     category_slug: "scripts",
     summary: "Small decisions that change the rhythm of a story.",
@@ -429,6 +432,7 @@ export const staticWriting = [
   },
   {
     id: "w4",
+    slug: "between-scenes",
     title: "Between scenes",
     category_slug: "screenplays",
     summary: "What happens in the silence between two lines of dialogue.",
