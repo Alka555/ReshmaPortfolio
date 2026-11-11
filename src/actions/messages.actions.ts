@@ -5,6 +5,15 @@ import { createClient } from "@/lib/supabase/server";
 import { contactMessageSchema, ContactMessageInput } from "@/lib/validators/contact.schema";
 import { revalidatePath } from "next/cache";
 
+type MessageRecord = {
+  id: string;
+  name: string;
+  email: string;
+  message: string;
+  is_archived: boolean;
+  created_at: string;
+};
+
 export async function createMessageAction(input: ContactMessageInput) {
   const validation = contactMessageSchema.safeParse(input);
   if (!validation.success) {
@@ -38,7 +47,7 @@ export async function createMessageAction(input: ContactMessageInput) {
   return { success: true, data };
 }
 
-export async function getMessagesAction() {
+export async function getMessagesAction(): Promise<{ data: MessageRecord[]; error: string | null }> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("messages")
@@ -46,7 +55,8 @@ export async function getMessagesAction() {
     .order("created_at", { ascending: false });
 
   if (error) return { data: [], error: error.message };
-  return { data, error: null };
+  const result = Array.isArray(data) ? data : data ? [data] : [];
+  return { data: result as MessageRecord[], error: null };
 }
 
 export async function archiveMessageAction(id: string, isArchived: boolean) {

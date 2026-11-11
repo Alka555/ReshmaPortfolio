@@ -55,10 +55,10 @@ export default function AboutPage() {
                   I was born and raised in Malappuram, Kerala. However, for the past six years, I have been living in Ernakulam, a city that has shaped both my personal life and my creative journey.
                 </p>
                 <p>
-                  After completing my secondary education, I chose Commerce for my higher secondary studies. I then earned a Bachelor's degree in Mass Communication and Journalism, followed by a one year Postgraduate Diploma in Television Journalism. Later, I completed my Master's degree in Journalism and Mass Communication.
+                  After completing my secondary education, I chose Commerce for my higher secondary studies. I then earned a Bachelor&apos;s degree in Mass Communication and Journalism, followed by a one year Postgraduate Diploma in Television Journalism. Later, I completed my Master&apos;s degree in Journalism and Mass Communication.
                 </p>
                 <p>
-                  My professional journey began with an online entertainment channel, where I worked for a year as a movie news and review writer. I then moved to a film promotion company, where I gained hands on experience in creating content that connected films with audiences. I was also responsible for managing the company's website.
+                  My professional journey began with an online entertainment channel, where I worked for a year as a movie news and review writer. I then moved to a film promotion company, where I gained hands on experience in creating content that connected films with audiences. I was also responsible for managing the company&apos;s website.
                 </p>
                 <p>
                   As my passion for writing grew, I stepped into the advertising industry. I worked as a Content Writer, creating brand stories, visual scripts, and creative content for various brands. Later, I joined another advertising agency as a Creative Head. Along with content writing, my responsibilities included leading creative ideas, coordinating shoots, client relation, managing team and developing engaging concepts.
@@ -176,7 +176,7 @@ export default function AboutPage() {
         {/* 4. CTA Banner */}
         <section aria-label="Contact call-to-action">
           <CTABanner
-            heading="Let's build something extraordinary."
+            heading="Let&apos;s build something extraordinary."
             description="Open to select commercial directing, brand film commissions, and creative writing collaborations."
             buttonLabel="Start a Conversation"
           />

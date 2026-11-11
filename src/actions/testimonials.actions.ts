@@ -5,7 +5,17 @@ import { createClient } from "@/lib/supabase/server";
 import { testimonialSchema, TestimonialInput } from "@/lib/validators/testimonial.schema";
 import { revalidatePath } from "next/cache";
 
-export async function getTestimonialsAction() {
+type TestimonialRecord = {
+  id: string;
+  quote: string;
+  author: string;
+  title: string;
+  company: string;
+  avatar_url?: string | null;
+  created_at?: string;
+};
+
+export async function getTestimonialsAction(): Promise<{ data: TestimonialRecord[]; error: string | null }> {
   if (!cmsEnabled) {
     return { data: [...staticTestimonials], error: null };
   }
@@ -17,7 +27,8 @@ export async function getTestimonialsAction() {
     .order("created_at", { ascending: false });
 
   if (error) return { data: [], error: error.message };
-  return { data, error: null };
+  const result = Array.isArray(data) ? data : data ? [data] : [];
+  return { data: result as TestimonialRecord[], error: null };
 }
 
 export async function createTestimonialAction(input: TestimonialInput) {
