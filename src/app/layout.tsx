@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/components/theme-provider";
-// @ts-ignore: allow side-effect CSS import without type declarations
+// @ts-expect-error: global stylesheet import is intentionally untyped in this project
 import "./globals.css";
 
 const inter = Inter({

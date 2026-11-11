@@ -57,7 +57,7 @@ export function AutoSlider({ items, baseVelocity = -0.5 }: AutoSliderProps) {
     if (!containerRef.current) return;
     
     const oneSetWidth = containerRef.current.scrollWidth / 3;
-    let currentX = x.get();
+    const currentX = x.get();
     
     // Correct boundary wrapping gracefully if dragging beyond limits
     if (currentX <= -oneSetWidth * 2) {

@@ -44,7 +44,18 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
     publishedOnly: true,
   });
 
-  const filteredRelated = relatedProjects.filter((p:any) => p.id !== project.id).slice(0, 3);
+  const filteredRelated = relatedProjects.filter((p: ProjectSummary) => p.id !== project.id).slice(0, 3);
+
+  type ProjectSummary = {
+    id: string;
+    title: string;
+    client: string;
+    year: string | number;
+    category_slug: string;
+    slug: string;
+    featured?: boolean;
+    thumbnail?: string;
+  };
 
   return (
     <>
@@ -169,7 +180,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               subtitle="More films and creative productions in this category."
             />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {filteredRelated.map((rel:any, idx:any) => (
+              {filteredRelated.map((rel: ProjectSummary, idx: number) => (
                 <FadeIn key={rel.id} delay={idx * 0.1}>
                   <ProjectCard project={rel} />
                 </FadeIn>

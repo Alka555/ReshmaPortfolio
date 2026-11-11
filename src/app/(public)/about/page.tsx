@@ -5,7 +5,7 @@ import { CTABanner } from "@/components/common/cta-banner";
 import { SectionHeader } from "@/components/common/section-header";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BlurReveal } from "@/components/motion/blur-reveal";
-import { Film, Feather, Sparkles, Lightbulb, ArrowUpRight } from "lucide-react";
+import { Film, Feather, Sparkles, ArrowUpRight } from "lucide-react";
 import React from "react";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
           <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>
-              Storyverse is an Instagram space created by Reshma Muraleedharan Tp to hold the thoughts, emotions, and stories that live inside her. Every post—whether it is a story, prose, poetry, or a review—comes from a deeply personal place.
+              Storyverse is an Instagram space created to hold the thoughts, emotions, and stories that live within Reshma Muraleedharan Tp. Every post—whether it is a story, prose, poetry, or a review—comes from a deeply personal place.
             </p>
             <p>
               The name Storyverse was chosen intentionally because it does not belong to one single genre. It is a home for many moods, many voices, and many kinds of storytelling.
