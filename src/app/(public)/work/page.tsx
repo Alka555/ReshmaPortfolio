@@ -4,8 +4,8 @@
 import { ProjectCard } from "@/components/cards/project-card";
 import { Project } from "@/types/project";
 import { FadeIn } from "@/components/motion/fade-in";
-import { siteContent, staticProjects } from "@/config/portfolio-content";
-import { InstagramSlider, InstagramSliderItem } from "@/components/common/instagram-slider";
+import { staticProjects, workSeries } from "@/config/portfolio-content";
+import { InstagramSlider } from "@/components/common/instagram-slider";
 
 export default function WorkPage() {
   // const featuredHomeProjects = (staticProjects as unknown as Project[])
@@ -17,9 +17,6 @@ export default function WorkPage() {
     .filter((project) => project.featured && project.published)
     .filter((project) => project.category === "instagram-reels");
 
-  // Works content (same source as the home page "Works" slider)
-  type ReelGroup = readonly InstagramSliderItem[];
-  const [reelGroupA = [], reelGroupB = []] = siteContent.reels as readonly ReelGroup[];
 
   return (
     <div className="container max-w-7xl px-4 md:px-8 py-32 md:py-40 space-y-16">
@@ -128,10 +125,8 @@ export default function WorkPage() {
       )}
       */}
 
-      {/* Works — same content as shown on the home page */}
-      <section aria-labelledby="works-slider">
-        <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
-      </section>
+      {/* Works — same series as the home page, shown as a still grid (no scroll, no heading/divider) */}
+      <InstagramSlider series={workSeries} variant="grid" showHeader={false} />
     </div>
   );
 }
