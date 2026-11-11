@@ -1,3 +1,5 @@
+import type { WorkSeries } from "@/types/work-series";
+
 // Presentation-stage content. Set cmsEnabled = true to restore Supabase-backed CMS.
 export const cmsEnabled = false;
 
@@ -250,6 +252,97 @@ export const siteContent = {
     body: "Every decision—from a held glance to the quiet after a line—is made in service of the story. Craft is not decoration; it is the way an idea becomes human.",
   },
 } as const;
+
+/**
+ * Instagram series shown on the home page (slider) and the /work page (still grid).
+ * Add episodes to `items` as they are published — new series stay "coming soon" until then.
+ */
+export const workSeries: readonly WorkSeries[] = [
+  {
+    id: "adithya",
+    title: "Adithya",
+    episodes: 9,
+    cover: "/images/ras.jpeg",
+    items: siteContent.reels[0],
+  },
+  {
+    id: "the-delivery-story",
+    title: "The Delivery Story",
+    episodes: 12,
+    items: siteContent.reels[1],
+  },
+  {
+    id: "second-chance",
+    title: "Second Chance",
+    items: [
+      {
+        id: "second-chance-1",
+        title: "Second Chance",
+        description: "Second Chance",
+        // TODO: replace with the real thumbnail (e.g. /images/second_chance.jpeg)
+        thumbnail: "/images/placeholder.jpg",
+        href: "https://www.instagram.com/reel/DRzNrR_k6Ai/?igsh=Ymh3eW9iNTZjYnJk",
+        label: "Watch reel",
+      },
+    ],
+  },
+  {
+    id: "new-joinee",
+    title: "New Joinee",
+    episodes: 7,
+    items: [],
+  },
+  {
+    id: "they-met-again",
+    title: "They Met Again",
+    episodes: 2,
+    items: [],
+  },
+  {
+    id: "abcd",
+    title: "ABCD",
+    episodes: 4,
+    items: [
+      {
+        id: "abcd-1",
+        title: "ABCD Part 1",
+        description: "ABCD — Part 1",
+        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP1.jpeg)
+        thumbnail: "/images/placeholder.jpg",
+        href: "https://www.instagram.com/reel/DMkodiPvDgX/?igsh=YjI5dDB6bnYxNXI0",
+        label: "Part 1",
+      }, 
+      {
+        id: "abcd-2",
+        title: "ABCD Part 2",
+        description: "ABCD — Part 2",
+        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP2.jpeg)
+        thumbnail: "/images/placeholder.jpg",
+        href: "https://www.instagram.com/reel/DMxX2JBvG84/?igsh=NnZsYWg3MzJlNWU=",
+        label: "Part 2",
+      },
+      {
+        id: "abcd-3",
+        title: "ABCD Part 3",
+        description: "ABCD — Part 3",
+        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP3.jpeg)
+        thumbnail: "/images/placeholder.jpg",
+        href: "https://www.instagram.com/reel/DN5ePudjy36/?igsh=NmJrdjI1cGJtZXRm",
+        label: "Part 3",
+      },
+      {
+        id: "abcd-4",
+        title: "ABCD Part 4",
+        description: "ABCD — Part 4",
+        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP4.jpeg)
+        thumbnail: "/images/placeholder.jpg",
+        href: "https://www.instagram.com/reel/DN-nlmVDwFQ/?igsh=YWFzZ2I5d3l0amQw",
+        label: "Part 4",
+      }
+
+    ],
+  },
+];
 
 /** Supabase-compatible project rows (snake_case) */
 export const staticProjects = [

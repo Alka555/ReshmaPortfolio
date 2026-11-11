@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarDays, MessageCircleMore, MapPin } from "lucide-react";
 import { generatePageMetadata, websiteJsonLd, personJsonLd } from "@/lib/seo";
-import { siteContent } from "@/config/portfolio-content";
+import { siteContent, workSeries } from "@/config/portfolio-content";
 import { Hero } from "@/components/common/hero";
 import { FadeIn } from "@/components/motion/fade-in";
-import { InstagramSlider, InstagramSliderItem } from "../../components/common/instagram-slider";
+import { InstagramSlider } from "../../components/common/instagram-slider";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -16,8 +16,6 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 export default function HomePage() {
-  type ReelGroup = readonly InstagramSliderItem[];
-  const [reelGroupA = [], reelGroupB = []] = siteContent.reels as readonly ReelGroup[];
   const services = [
     {
       title: "Brand films",
@@ -143,7 +141,7 @@ Blue has always been my favourite colour, and it naturally found its way into th
         </section>
 
         <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="reels-slider">
-          <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
+          <InstagramSlider series={workSeries} maxItemsPerSeries={6} />
         </section>
 
         {/* <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
