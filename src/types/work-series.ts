@@ -12,7 +12,7 @@ export interface WorkSeries {
   title: string;
   /** Total episode count shown in the heading (may differ from items uploaded so far). */
   episodes?: number;
-  /** Optional small cover image shown beside the heading. */
+  /** Optional cover image used on the story card (home page). */
   cover?: string;
   items: readonly InstagramSliderItem[];
 }

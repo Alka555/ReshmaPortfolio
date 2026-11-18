@@ -1,20 +1,23 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { InstagramSliderItem, WorkSeries } from "@/types/work-series";
 import { AutoSlider } from "./auto-slider";
 import { ReelCard } from "./reel-card";
+import { StoryPicker } from "./story-picker";
 
 export type { InstagramSliderItem, WorkSeries };
 
 export interface InstagramSliderProps {
   series: readonly WorkSeries[];
-  /** "slider" = auto-scrolling rows (home), "grid" = still grid (work page). */
-  variant?: "slider" | "grid";
+  /**
+   * "slider" = auto-scrolling rows, "grid" = still grid (work page),
+   * "stories" = one card per story; clicking a card shows its videos (home page).
+   */
+  variant?: "slider" | "grid" | "stories";
   /** Show the "Works" heading and the top divider line. */
   showHeader?: boolean;
   /** Limit episodes shown per series (e.g. a preview on the home page). */
@@ -24,11 +27,6 @@ export interface InstagramSliderProps {
 function SeriesHeading({ series }: { series: WorkSeries }) {
   return (
     <div className="mb-6 flex items-center gap-4">
-      {series.cover && (
-        <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border border-white/10">
-          <Image src={series.cover} alt={`${series.title} cover`} fill sizes="96px" className="object-cover" />
-        </div>
-      )}
       <h2 className="text-sm uppercase tracking-widest text-white/40 font-medium">
         {series.title}
         {series.episodes ? (
@@ -59,7 +57,7 @@ export function InstagramSlider({
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Works</p>
-            <h3 className="mt-2 font-heading text-xl text-white sm:text-2xl md:text-3xl">Short-form stories, one by one.</h3>
+            <h3 className="mt-2 font-heading text-xl text-white sm:text-2xl md:text-3xl">Stories written by me.</h3>
           </div>
           <Link href="https://www.instagram.com/reshma_muraleedharan_tp?igsh=dHFuZHZqaWUwOThj/" target="_blank" rel="noreferrer" className="hidden items-center text-[10px] uppercase tracking-[0.28em] text-white/70 transition-colors hover:text-gold md:inline-flex">
             Follow along
@@ -68,7 +66,10 @@ export function InstagramSlider({
         </div>
       )}
 
-      {series.map((s, index) => {
+      {variant === "stories" ? (
+        <StoryPicker series={series} />
+      ) : (
+      series.map((s, index) => {
         const items = maxItemsPerSeries ? s.items.slice(0, maxItemsPerSeries) : s.items;
 
         return (
@@ -90,7 +91,8 @@ export function InstagramSlider({
             )}
           </div>
         );
-      })}
+      })
+      )}
     </section>
   );
 }

@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image"; // re-enable if the Services section is uncommented
 import { ArrowRight, CalendarDays, MessageCircleMore, MapPin } from "lucide-react";
 import { generatePageMetadata, websiteJsonLd, personJsonLd } from "@/lib/seo";
 import { siteContent, workSeries } from "@/config/portfolio-content";
 import { Hero } from "@/components/common/hero";
+import { StoryverseSection } from "@/components/common/storyverse-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { InstagramSlider } from "../../components/common/instagram-slider";
 import { Button } from "@/components/ui/button";
@@ -93,55 +94,12 @@ export default function HomePage() {
 
       <div className="space-y-16 pb-20 sm:space-y-24 sm:pb-28 md:space-y-36 md:pb-36">
 
-        <section className="container px-3 py-4 sm:px-4 md:px-8" aria-labelledby="storyverse-section">
-          <FadeIn>
-            <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/[0.03] shadow-soft-md sm:rounded-[2rem]">
-              <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[25%_75%]">
-                <div className="relative h-full sm:min-h-[320px] md:min-h-[420px]">
-                  <Image
-                    src="/images/Storyverse.jpeg"
-                    alt="Storyverse cover image"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="space-y-6 p-5 sm:p-8 md:p-10 lg:p-12">
-                  <div className="space-y-3">
-                    <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Storyverse</p>
-                    <h2 className="font-heading text-3xl leading-tight text-white md:text-4xl">
-                      A universe for the stories, feelings, and characters that live within me.
-                    </h2>
-                  </div>
-
-                  <p className="text-base leading-relaxed text-white/65 md:text-lg">
-As a writer, I felt a deep desire to create a space for my thoughts, emotions, stories, and characters that quietly take shape within me. That desire eventually led me to create Storyverse — an Instagram space where I could give those ideas a life of their own.
-
-Every piece I share through Storyverse is close to my heart. It could be a story, prose, poetry, a review, or simply an idea that I felt compelled to put into words. It may resonate with some readers and not with others, and that is perfectly alright. I wanted Storyverse to remain open to every kind of story that I might want to tell.
-
-That is also why I chose the name Storyverse — a universe of stories without boundaries.
-
-Blue has always been my favourite colour, and it naturally found its way into the Storyverse logo. It felt like the right colour for a space that holds so many different shades of thought, feeling, and imagination.
-             </p>
-
-                  <a
-                    href="https://www.instagram.com/storyverse_._?igsh=NGxvaDVhY255Yjkz"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center text-[10px] uppercase tracking-[0.2em] text-gold transition-colors duration-300 hover:text-white"
-                  >
-                    Visit Storyverse
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
+        <section className="container px-3 py-6 sm:px-4 md:px-8" aria-labelledby="storyverse-section">
+          <StoryverseSection />
         </section>
 
         <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="reels-slider">
-          <InstagramSlider series={workSeries} maxItemsPerSeries={6} />
+          <InstagramSlider series={workSeries} variant="stories" />
         </section>
 
         {/* <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
@@ -282,7 +240,7 @@ Blue has always been my favourite colour, and it naturally found its way into th
         </section> */}
 
         {/* Services & Approach */}
-        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl space-y-8">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl space-y-8">
           <FadeIn>
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)]">
               <div className="max-w-3xl">
@@ -350,7 +308,7 @@ Blue has always been my favourite colour, and it naturally found its way into th
               </div>
             </div>
           </FadeIn>
-        </section>
+        </section> */}
 
         {/* Awards & Testimonials */}
         {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">

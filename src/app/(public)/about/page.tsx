@@ -24,7 +24,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
       />
 
-      <div className="container py-24 space-y-24 max-w-5xl">
+      <div className="container py-24 space-y-24 max-w-7xl">
         <section aria-label="About Reshma Muraleedharan Tp" className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <BlurReveal>
@@ -44,8 +44,8 @@ export default function AboutPage() {
 
           <div className="md:col-span-7 space-y-6">
             <BlurReveal delay={0.2}>
-              <h1 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-                About
+              <h1 className="font-heading text-4xl sm:text-4xl font-bold tracking-tight text-white leading-[1.1]">
+                About Me
               </h1>
               <div className="space-y-4 pt-2 text-base text-muted-foreground leading-relaxed">
                 <p>
@@ -74,9 +74,24 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section aria-labelledby="storyverse-heading" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-6">
+        <section aria-labelledby="storyverse-heading" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
+          {/* Storyverse logo — fixed aspect ratio so it stays visible on mobile */}
+          <div className="md:col-span-4">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[260px] overflow-hidden rounded-xl border border-white/10 md:max-w-none">
+              <Image
+                src="/images/Storyverse.jpeg"
+                alt="Storyverse logo"
+                fill
+                sizes="(max-width: 768px) 260px, 30vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-6 md:col-span-8">
           <SectionHeader
-            badgeTag="Personal Project"
+            badgeTag=" My New Venture"
             title="Storyverse"
             subtitle="A space for thoughts, emotions, and stories that grow from within."
           />
@@ -102,9 +117,11 @@ export default function AboutPage() {
             Visit Storyverse
             <ArrowUpRight className="h-4 w-4" />
           </a>
+          </div>
+          </div>
         </section>
 
-        <section aria-label="Creative philosophy" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-8">
+        {/* <section aria-label="Creative philosophy" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-8">
           <SectionHeader
             badgeTag="Creative Ethos"
             title="Philosophy"
@@ -142,7 +159,7 @@ export default function AboutPage() {
               </p>
             </FadeIn>
           </div>
-        </section>
+        </section> */}
 
         {/* 3. Storytelling Journey */}
         <section aria-labelledby="journey-heading" className="space-y-10">
