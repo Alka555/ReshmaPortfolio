@@ -262,27 +262,29 @@ export const workSeries: readonly WorkSeries[] = [
     id: "adithya",
     title: "Adithya",
     episodes: 9,
-    cover: "/images/ras.jpeg",
-    items: siteContent.reels[0],
+    // cover: "/images/ras.jpeg",
+    // reels are stored newest-first; reverse so Episode 1 comes first
+    items: [...siteContent.reels[0]].reverse(),
   },
   {
     id: "the-delivery-story",
     title: "The Delivery Story",
     episodes: 12,
-    items: siteContent.reels[1],
+    // reels are stored newest-first; reverse so Episode 1 comes first
+    items: [...siteContent.reels[1]].reverse(),
   },
   {
     id: "second-chance",
     title: "Second Chance",
+    cover: "/images/covers/second_chance.jpg",
     items: [
       {
         id: "second-chance-1",
-        title: "Second Chance",
-        description: "Second Chance",
-        // TODO: replace with the real thumbnail (e.g. /images/second_chance.jpeg)
-        thumbnail: "/images/placeholder.jpg",
+        title: "Second Chance Episode 1",
+        description: "Second Chance — Episode 1",
+        thumbnail: "/images/covers/second_chance_1.jpg",
         href: "https://www.instagram.com/reel/DRzNrR_k6Ai/?igsh=Ymh3eW9iNTZjYnJk",
-        label: "Watch reel",
+        label: "Episode 1",
       },
     ],
   },
@@ -290,34 +292,77 @@ export const workSeries: readonly WorkSeries[] = [
     id: "new-joinee",
     title: "New Joinee",
     episodes: 7,
-    items: [],
+    cover: "/images/covers/new_joinee.jpg",
+    items: [
+      {
+        id: "new-joinee-1",
+        title: "New Joinee Part 1",
+        description: "New Joinee — Part 1",
+        thumbnail: "/images/covers/new_joinee_1.jpg",
+        href: "https://www.instagram.com/reel/DdvOsDSp_ZE/?stkn=MWw4NTViNWZnazdzdQ==",
+        label: "Part 1",
+      },
+      {
+        id: "new-joinee-2",
+        title: "New Joinee Part 2",
+        description: "New Joinee — Part 2",
+        thumbnail: "/images/covers/new_joinee_2.jpg",
+        href: "https://www.instagram.com/reel/Dd030UKJcio/?stkn=NzYwZzlnamQybTM5",
+        label: "Part 2",
+      },
+      {
+        id: "new-joinee-3",
+        title: "New Joinee Part 3",
+        description: "New Joinee — Part 3",
+        thumbnail: "/images/covers/new_joinee_3.jpg",
+        href: "https://www.instagram.com/reel/Dd8mzS2pC_p/?stkn=MXd1YWFyaWl1OTJrcg==",
+        label: "Part 3",
+      },
+    ],
   },
   {
     id: "they-met-again",
     title: "They Met Again",
     episodes: 2,
-    items: [],
+    cover: "/images/covers/they_met_again.jpg",
+    items: [
+      {
+        id: "they-met-again-1",
+        title: "They Met Again Episode 1",
+        description: "They Met Again — Episode 1",
+        thumbnail: "/images/covers/they_met_again_1.jpg",
+        href: "https://www.instagram.com/reel/DN-nxmcEoQQ/?igsh=NjIyYmlueXA2NTdr",
+        label: "Episode 1",
+      },
+      {
+        id: "they-met-again-2",
+        title: "They Met Again Episode 2",
+        description: "They Met Again — Episode 2",
+        thumbnail: "/images/covers/they_met_again_2.jpg",
+        href: "https://www.instagram.com/reel/DOYXTXFEWZO/?igsh=MXRwNndiamI2Nml5cw==",
+        label: "Episode 2",
+      },
+    ],
   },
   {
     id: "abcd",
     title: "ABCD",
     episodes: 4,
+    cover: "/images/covers/abcd.jpg",
     items: [
       {
         id: "abcd-1",
         title: "ABCD Part 1",
         description: "ABCD — Part 1",
-        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP1.jpeg)
-        thumbnail: "/images/placeholder.jpg",
+        thumbnail: "/images/covers/abcd_1.jpg",
         href: "https://www.instagram.com/reel/DMkodiPvDgX/?igsh=YjI5dDB6bnYxNXI0",
         label: "Part 1",
-      }, 
+      },
       {
         id: "abcd-2",
         title: "ABCD Part 2",
         description: "ABCD — Part 2",
-        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP2.jpeg)
-        thumbnail: "/images/placeholder.jpg",
+        thumbnail: "/images/covers/abcd_2.jpg",
         href: "https://www.instagram.com/reel/DMxX2JBvG84/?igsh=NnZsYWg3MzJlNWU=",
         label: "Part 2",
       },
@@ -325,8 +370,7 @@ export const workSeries: readonly WorkSeries[] = [
         id: "abcd-3",
         title: "ABCD Part 3",
         description: "ABCD — Part 3",
-        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP3.jpeg)
-        thumbnail: "/images/placeholder.jpg",
+        thumbnail: "/images/covers/abcd_3.jpg",
         href: "https://www.instagram.com/reel/DN5ePudjy36/?igsh=NmJrdjI1cGJtZXRm",
         label: "Part 3",
       },
@@ -334,12 +378,10 @@ export const workSeries: readonly WorkSeries[] = [
         id: "abcd-4",
         title: "ABCD Part 4",
         description: "ABCD — Part 4",
-        // TODO: replace with the real thumbnail (e.g. /images/abcd_EP4.jpeg)
-        thumbnail: "/images/placeholder.jpg",
+        thumbnail: "/images/covers/abcd_4.jpg",
         href: "https://www.instagram.com/reel/DN-nlmVDwFQ/?igsh=YWFzZ2I5d3l0amQw",
         label: "Part 4",
-      }
-
+      },
     ],
   },
 ];

@@ -1,11 +1,10 @@
-"use client";
-
 // import { SectionHeader } from "@/components/common/section-header";
 import { ProjectCard } from "@/components/cards/project-card";
 import { Project } from "@/types/project";
 import { FadeIn } from "@/components/motion/fade-in";
 import { staticProjects, workSeries } from "@/config/portfolio-content";
 import { InstagramSlider } from "@/components/common/instagram-slider";
+import { StoryverseSection } from "@/components/common/storyverse-section";
 
 export default function WorkPage() {
   // const featuredHomeProjects = (staticProjects as unknown as Project[])
@@ -126,7 +125,10 @@ export default function WorkPage() {
       */}
 
       {/* Works — same series as the home page, shown as a still grid (no scroll, no heading/divider) */}
+      {/* Storyverse — same section as the home page */}
+
       <InstagramSlider series={workSeries} variant="grid" showHeader={false} />
+      <StoryverseSection />
     </div>
   );
 }
