@@ -73,7 +73,8 @@ export function InstagramSlider({
         const items = maxItemsPerSeries ? s.items.slice(0, maxItemsPerSeries) : s.items;
 
         return (
-          <div key={s.id} className={cn(index === 0 ? (showHeader ? "mt-12" : "") : "mt-10")}>
+          // id = anchor target for the home page story cards (/work#<id>); scroll-mt clears the fixed navbar
+          <div key={s.id} id={s.id} className={cn("scroll-mt-28", index === 0 ? (showHeader ? "mt-12" : "") : "mt-10")}>
             <SeriesHeading series={s} />
 
             {items.length === 0 ? (
