@@ -1,3 +1,5 @@
+import type { WorkSeries } from "@/types/work-series";
+
 // Presentation-stage content. Set cmsEnabled = true to restore Supabase-backed CMS.
 export const cmsEnabled = false;
 
@@ -11,12 +13,12 @@ export const siteContent = {
   // heroBackgroundImage:
   //   "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=2400&q=85",
   heroBackgroundImage:
-    "/images/herobg.png",
+    "/images/herobg_flip.png",
   // portraitImage:
   //   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
   portraitImage: "/images/selfPotrait.jpeg",
   introEyebrow: "Portrait intro",
-  introTitle: "I build cinematic worlds that feel intimate, clear, and quietly unforgettable.",
+  // introTitle: "I build cinematic worlds that feel intimate, clear, and quietly unforgettable.",
   introDescription:
     "I craft stories that connect brands with people through emotion, clarity, and cinematic storytelling.",
   skills: [
@@ -39,226 +41,359 @@ export const siteContent = {
   ],
   reels: [
     [
-    {
-      id: "reel-1",
-      title: "Adithya",
-      description: "From city lights to the goodness of village life, Adithya's journey takes an unexpected turn. Will her world collide with Anandan's pure heart? A female perspective on love and finding home🌸",
-      thumbnail:
-        "/images/EP9.png",
-      href: "https://www.instagram.com/reel/DYpE-FMzP09/?igsh=MWNxNW1zcjRzaTZkNQ==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-2",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP8.png",
-      href: "https://www.instagram.com/reel/DYmgT3pTc0O/?igsh=djd0NWhtYWNxZHZw",
-      label: "Latest reel",
-    },{
-      id: "reel-3",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP7.png",
-      href: "https://www.instagram.com/reel/DYj7a8fzTaY/?igsh=MTFpbDBzbHUwMnZ2dA==",
-      label: "Latest reel",
-    },{
-      id: "reel-4",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP6.png",
-      href: "https://www.instagram.com/reel/DYhWoR3TcBp/?igsh=MXU1MG1sYmc4YXcwMQ==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-5",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP5.png",
-      href: "https://www.instagram.com/reel/DYex5TZpScQ/?igsh=MTZ6c3N3bjE5M2w2Mg==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-6",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP4.png",
-      href: "https://www.instagram.com/reel/DYcNGxMp8iI/?igsh=MTAyamJsN3I5ZXU1cQ==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-7",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP3.png",
-      href: "https://www.instagram.com/reel/DYZoRTPJGmi/?igsh=MXF0dTFnb3RsdW4xOQ==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-8",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP2.png",
-      href: "https://www.instagram.com/reel/DYXDhEcpIXG/?igsh=dnJ1dWJ1eHk5empu",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-9",
-      title: "Adithya",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP1.png",
-      href: "https://www.instagram.com/reel/DYUesgQpret/?igsh=MWRlZzk5N3MyNW92cA==",
-      label: "Latest reel",
-    },
-    // {
-    //   id: "reel-2",
-    //   title: "Afterlight",
-    //   description: "Warm frames, cinematic pacing, and emotional clarity.",
-    //   thumbnail:
-    //     "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-    //   href: "https://www.instagram.com/",
-    //   label: "New episode",
-    // },
-    // {
-    //   id: "reel-3",
-    //   title: "A Frame in Bloom",
-    //   description: "Editorial storytelling shaped around gesture and light.",
-    //   thumbnail:
-    //     "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
-    //   href: "https://www.instagram.com/",
-    //   label: "Behind the scenes",
-    // },
-    // {
-    //   id: "reel-4",
-    //   title: "Slow Summer",
-    //   description: "Gentle visual narrative for a modern, reflective audience.",
-    //   thumbnail:
-    //     "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
-    //   href: "https://www.instagram.com/",
-    //   label: "Weekly drop",
-    // },
-  ],[
-    {
-      id: "reel-1",
-      title: "The Delivery Stroy",
-      description: "From city lights to the goodness of village life, Adithya's journey takes an unexpected turn. Will her world collide with Anandan's pure heart? A female perspective on love and finding home🌸",
-      thumbnail:
-        "/images/placeholder.jpg",
-      href: "https://www.instagram.com/reel/DG0Qe3_TM8u/?igsh=MWR3bGs2MTJoazUwOQ==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-2",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP8.png",
-      href: "https://www.instagram.com/reel/DGqA5BYTM3a/?igsh=dzI0Z2F4MjY3eWNw",
-      label: "Latest reel",
-    },{
-      id: "reel-3",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP7.png",
-      href: "https://www.instagram.com/reel/DGkwPluzdJx/?igsh=NHd1Yjc5dzN4OWNp",
-      label: "Latest reel",
-    },{
-      id: "reel-4",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP6.png",
-      href: "https://www.instagram.com/reel/DGSzNjYTzBU/?igsh=MXZva3lxeDR6MGd3MA==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-5",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP5.png",
-      href: "https://www.instagram.com/reel/DGF6pv8ziTX/?igsh=cXBobTNleGdvMGZv",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-6",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP4.png",
-      href: "https://www.instagram.com/reel/DFuynv4TZYr/?igsh=ajhiZDE2Y2VwcXZq",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-7",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP3.png",
-      href: "https://www.instagram.com/reel/DFP0_rbz5Db/?igsh=MXVxNWNnZjk0Mml0dw==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-8",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP2.png",
-      href: "https://www.instagram.com/reel/DFDFF4Tzfkm/?igsh=MTR6dG11cmh2YjBwdA==",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-9",
-      title: "The Delivery Stroy",
-      description: "A short-form study in atmosphere and stillness.",
-      thumbnail:
-        "/images/EP1.png",
-      href: "https://www.instagram.com/reel/DEmqzQPTeGU/?igsh=ZnN4dGUwNHhnODd2",
-      label: "Latest reel",
-    },
-    {
-      id: "reel-10",
-      title: "Afterlight",
-      description: "Warm frames, cinematic pacing, and emotional clarity.",
-      thumbnail:
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-      href: "https://www.instagram.com/reel/DEHvse2TBXA/?igsh=MWNhNmdwOXU3Z3AweA==",
-      label: "New episode",
-    },
-    {
-      id: "reel-11",
-      title: "A Frame in Bloom",
-      description: "Editorial storytelling shaped around gesture and light.",
-      thumbnail:
-        "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
-      href: "https://www.instagram.com/reel/DDwb78VToor/?igsh=MWw1ZHQ4b2NjYmRxNg==",
-      label: "Behind the scenes",
-    },
-    {
-      id: "reel-12",
-      title: "Slow Summer",
-      description: "Gentle visual narrative for a modern, reflective audience.",
-      thumbnail:
-        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
-      href: "https://www.instagram.com/reel/DC_uqluTLaY/?igsh=ZjhzbjZ6bnExYXo3",
-      label: "Weekly drop",
-    },
-  ],], 
+      {
+        id: "reel-1",
+        title: "Adithya",
+        description: "From city lights to the goodness of village life, Adithya's journey takes an unexpected turn. Will her world collide with Anandan's pure heart? A female perspective on love and finding home🌸",
+        thumbnail:
+          "/images/EP9.png",
+        href: "https://www.instagram.com/reel/DYpE-FMzP09/?igsh=MWNxNW1zcjRzaTZkNQ==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-2",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP8.png",
+        href: "https://www.instagram.com/reel/DYmgT3pTc0O/?igsh=djd0NWhtYWNxZHZw",
+        label: "Latest reel",
+      }, {
+        id: "reel-3",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP7.png",
+        href: "https://www.instagram.com/reel/DYj7a8fzTaY/?igsh=MTFpbDBzbHUwMnZ2dA==",
+        label: "Latest reel",
+      }, {
+        id: "reel-4",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP6.png",
+        href: "https://www.instagram.com/reel/DYhWoR3TcBp/?igsh=MXU1MG1sYmc4YXcwMQ==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-5",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP5.png",
+        href: "https://www.instagram.com/reel/DYex5TZpScQ/?igsh=MTZ6c3N3bjE5M2w2Mg==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-6",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP4.png",
+        href: "https://www.instagram.com/reel/DYcNGxMp8iI/?igsh=MTAyamJsN3I5ZXU1cQ==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-7",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP3.png",
+        href: "https://www.instagram.com/reel/DYZoRTPJGmi/?igsh=MXF0dTFnb3RsdW4xOQ==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-8",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP2.png",
+        href: "https://www.instagram.com/reel/DYXDhEcpIXG/?igsh=dnJ1dWJ1eHk5empu",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-9",
+        title: "Adithya",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/EP1.png",
+        href: "https://www.instagram.com/reel/DYUesgQpret/?igsh=MWRlZzk5N3MyNW92cA==",
+        label: "Latest reel",
+      },
+      // {
+      //   id: "reel-2",
+      //   title: "Afterlight",
+      //   description: "Warm frames, cinematic pacing, and emotional clarity.",
+      //   thumbnail:
+      //     "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+      //   href: "https://www.instagram.com/",
+      //   label: "New episode",
+      // },
+      // {
+      //   id: "reel-3",
+      //   title: "A Frame in Bloom",
+      //   description: "Editorial storytelling shaped around gesture and light.",
+      //   thumbnail:
+      //     "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80",
+      //   href: "https://www.instagram.com/",
+      //   label: "Behind the scenes",
+      // },
+      // {
+      //   id: "reel-4",
+      //   title: "Slow Summer",
+      //   description: "Gentle visual narrative for a modern, reflective audience.",
+      //   thumbnail:
+      //     "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+      //   href: "https://www.instagram.com/",
+      //   label: "Weekly drop",
+      // },
+    ], [
+      {
+        id: "reel-12",
+        title: "DS EP12",
+        description: "The Delivery Story — Final part",
+        thumbnail:
+          "/images/covers/the_delivery_story_12.jpg",
+        href: "https://www.instagram.com/reel/DG0Qe3_TM8u/?gwpx=MWR3bGs2MTJoazUwOQ==",
+        label: "Final part",
+      },
+      {
+        id: "reel-1",
+        title: "DS EP11",
+        description: "From city lights to the goodness of village life, Adithya's journey takes an unexpected turn. Will her world collide with Anandan's pure heart? A female perspective on love and finding home🌸",
+        thumbnail:
+          "/images/ds_EP11.jpeg",
+        href: "https://www.instagram.com/reel/DG0Qe3_TM8u/?igsh=MWR3bGs2MTJoazUwOQ==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-2",
+        title: "DS EP10",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP10.jpeg",
+        href: "https://www.instagram.com/reel/DGqA5BYTM3a/?igsh=dzI0Z2F4MjY3eWNw",
+        label: "Latest reel",
+      }, {
+        id: "reel-3",
+        title: "DS EP9",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP9.jpeg",
+        href: "https://www.instagram.com/reel/DGkwPluzdJx/?igsh=NHd1Yjc5dzN4OWNp",
+        label: "Latest reel",
+      }, {
+        id: "reel-4",
+        title: "DS EP8",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP8.jpeg",
+        href: "https://www.instagram.com/reel/DGSzNjYTzBU/?igsh=MXZva3lxeDR6MGd3MA==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-5",
+        title: "DS EP7",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP7.jpeg",
+        href: "https://www.instagram.com/reel/DGF6pv8ziTX/?igsh=cXBobTNleGdvMGZv",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-6",
+        title: "DS EP6",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP6.jpeg",
+        href: "https://www.instagram.com/reel/DFuynv4TZYr/?igsh=ajhiZDE2Y2VwcXZq",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-7",
+        title: "DS EP5",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP5.jpeg",
+        href: "https://www.instagram.com/reel/DFP0_rbz5Db/?igsh=MXVxNWNnZjk0Mml0dw==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-8",
+        title: "DS EP4",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP4.jpeg",
+        href: "https://www.instagram.com/reel/DFDFF4Tzfkm/?igsh=MTR6dG11cmh2YjBwdA==",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-9",
+        title: "DS EP3",
+        description: "A short-form study in atmosphere and stillness.",
+        thumbnail:
+          "/images/ds_EP3.jpeg",
+        href: "https://www.instagram.com/reel/DEmqzQPTeGU/?igsh=ZnN4dGUwNHhnODd2",
+        label: "Latest reel",
+      },
+      {
+        id: "reel-10",
+        title: "DS EP2",
+        description: "Warm frames, cinematic pacing, and emotional clarity.",
+        thumbnail:
+          "/images/ds_EP2.jpeg",
+        href: "https://www.instagram.com/reel/DEHvse2TBXA/?igsh=MWNhNmdwOXU3Z3AweA==",
+        label: "New episode",
+      },
+      {
+        id: "reel-11",
+        title: "DS EP1",
+        description: "Editorial storytelling shaped around gesture and light.",
+        thumbnail:
+          "/images/ds_EP1.jpeg",
+        href: "https://www.instagram.com/reel/DDwb78VToor/?igsh=MWw1ZHQ4b2NjYmRxNg==",
+        label: "Behind the scenes",
+      },
+    ],],
   philosophy: {
     headline:
       "The most memorable films do not simply show something. They leave room for you to feel it.",
     body: "Every decision—from a held glance to the quiet after a line—is made in service of the story. Craft is not decoration; it is the way an idea becomes human.",
   },
 } as const;
+
+/**
+ * Instagram series shown on the home page (slider) and the /work page (still grid).
+ * Add episodes to `items` as they are published — new series stay "coming soon" until then.
+ */
+export const workSeries: readonly WorkSeries[] = [
+  {
+    id: "adithya",
+    title: "Adithya",
+    episodes: 9,
+    // cover: "/images/ras.jpeg",
+    // reels are stored newest-first; reverse so Episode 1 comes first
+    items: [...siteContent.reels[0]].reverse(),
+  },
+  {
+    id: "the-delivery-story",
+    title: "The Delivery Story",
+    episodes: 12,
+    // reels are stored newest-first; reverse so Episode 1 comes first
+    items: [...siteContent.reels[1]].reverse(),
+  },
+  {
+    id: "second-chance",
+    title: "Second Chance",
+    cover: "/images/secondChance.jpg.jpeg",
+    items: [
+      {
+        id: "second-chance-1",
+        title: "Second Chance Episode 1",
+        description: "Second Chance — Episode 1",
+        thumbnail: "/images/secondChance.jpg.jpeg",
+        href: "https://www.instagram.com/reel/DRzNrR_k6Ai/?igsh=Ymh3eW9iNTZjYnJk",
+        label: "Episode 1",
+      },
+    ],
+  },
+  {
+    id: "new-joinee",
+    title: "New Joinee",
+    episodes: 7,
+    cover: "/images/covers/new_joinee.jpg",
+    items: [
+      {
+        id: "new-joinee-1",
+        title: "New Joinee Part 1",
+        description: "New Joinee — Part 1",
+        thumbnail: "/images/covers/new_joinee_1.jpg",
+        href: "https://www.instagram.com/reel/DdvOsDSp_ZE/?stkn=MWw4NTViNWZnazdzdQ==",
+        label: "Part 1",
+      },
+      {
+        id: "new-joinee-2",
+        title: "New Joinee Part 2",
+        description: "New Joinee — Part 2",
+        thumbnail: "/images/covers/new_joinee_2.jpg",
+        href: "https://www.instagram.com/reel/Dd030UKJcio/?stkn=NzYwZzlnamQybTM5",
+        label: "Part 2",
+      },
+      {
+        id: "new-joinee-3",
+        title: "New Joinee Part 3",
+        description: "New Joinee — Part 3",
+        thumbnail: "/images/covers/new_joinee_3.jpg",
+        href: "https://www.instagram.com/reel/Dd8mzS2pC_p/?stkn=MXd1YWFyaWl1OTJrcg==",
+        label: "Part 3",
+      },
+    ],
+  },
+  {
+    id: "they-met-again",
+    title: "They Met Again",
+    episodes: 2,
+    cover: "/images/covers/they_met_again.jpg",
+    items: [
+      {
+        id: "they-met-again-1",
+        title: "They Met Again Episode 1",
+        description: "They Met Again — Episode 1",
+        thumbnail: "/images/covers/they_met_again_1.jpg",
+        href: "https://www.instagram.com/reel/DN-nxmcEoQQ/?igsh=NjIyYmlueXA2NTdr",
+        label: "Episode 1",
+      },
+      {
+        id: "they-met-again-2",
+        title: "They Met Again Episode 2",
+        description: "They Met Again — Episode 2",
+        thumbnail: "/images/covers/they_met_again_2.jpg",
+        href: "https://www.instagram.com/reel/DOYXTXFEWZO/?igsh=MXRwNndiamI2Nml5cw==",
+        label: "Final part",
+      },
+    ],
+  },
+  {
+    id: "abcd",
+    title: "ABCD",
+    episodes: 4,
+    cover: "/images/abcd-p1.jpeg",
+    items: [
+      {
+        id: "abcd-1",
+        title: "ABCD Part 1",
+        description: "ABCD — Part 1",
+        thumbnail: "/images/abcd-p1.jpeg",
+        href: "https://www.instagram.com/reel/DMkodiPvDgX/?evlk=YjI5dDB6bnYxNXI0",
+        label: "Part 1",
+      },
+      {
+        id: "abcd-2",
+        title: "ABCD Part 2",
+        description: "ABCD — Part 2",
+        thumbnail: "/images/abcd-p2.jpeg",
+        href: "https://www.instagram.com/reel/DMxX2JBvG84/?gwpx=NnZsYWg3MzJlNWU=",
+        label: "Part 2",
+      },
+      {
+        id: "abcd-3",
+        title: "ABCD Part 3",
+        description: "ABCD — Part 3",
+        thumbnail: "/images/abcd-p3.jpeg",
+        href: "https://www.instagram.com/reel/DN5ePudjy36/?jplx=NmJrdjI1cGJtZXRm",
+        label: "Part 3",
+      },
+      {
+        id: "abcd-4",
+        title: "ABCD Part 4",
+        description: "ABCD — Part 4",
+        thumbnail: "/images/abcd-final.jpeg",
+        href: "https://www.instagram.com/reel/DN-nlmVDwFQ/?fqnt=YWFzZ2I5d3l0amQw",
+        label: "Final part",
+      },
+    ],
+  },
+];
 
 /** Supabase-compatible project rows (snake_case) */
 export const staticProjects = [
@@ -329,8 +464,8 @@ export const staticProjects = [
     idea: "Rain as metaphor—washing away, then the first ray of light through clouds.",
     execution: "Handheld iPhone footage mixed with cinematic B-roll. Edited to a single piano motif.",
     outcome: "280K views on Instagram. Reposted by three major editorial accounts.",
-    thumbnail: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=85",
-    video_url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    thumbnail: "/WhatsApp Image 2026-08-05 at 10.58.32 PM.jpeg",
+    external_url: "https://www.instagram.com/storyverse_._?igsh=NGxvaDVhY255Yjkz",
     featured: true,
     published: true,
     created_at: "2024-06-01",
@@ -402,6 +537,7 @@ export const staticProjects = [
 export const staticWriting = [
   {
     id: "w1",
+    slug: "on-looking-long-enough",
     title: "On looking long enough",
     category_slug: "blogs",
     summary: "A note on patience, observation and the frame before the frame.",
@@ -414,6 +550,7 @@ export const staticWriting = [
   },
   {
     id: "w2",
+    slug: "the-language-of-quiet",
     title: "The language of quiet",
     category_slug: "creative-writing",
     summary: "Why restraint can carry more feeling than spectacle.",
@@ -426,6 +563,7 @@ export const staticWriting = [
   },
   {
     id: "w3",
+    slug: "notes-from-the-edit",
     title: "Notes from the edit",
     category_slug: "scripts",
     summary: "Small decisions that change the rhythm of a story.",
@@ -438,6 +576,7 @@ export const staticWriting = [
   },
   {
     id: "w4",
+    slug: "between-scenes",
     title: "Between scenes",
     category_slug: "screenplays",
     summary: "What happens in the silence between two lines of dialogue.",

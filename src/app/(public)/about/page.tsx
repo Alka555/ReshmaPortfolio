@@ -5,7 +5,7 @@ import { CTABanner } from "@/components/common/cta-banner";
 import { SectionHeader } from "@/components/common/section-header";
 import { FadeIn } from "@/components/motion/fade-in";
 import { BlurReveal } from "@/components/motion/blur-reveal";
-import { Film, Feather, Sparkles, Lightbulb, ArrowUpRight } from "lucide-react";
+import { Film, Feather, Sparkles, ArrowUpRight } from "lucide-react";
 import React from "react";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -24,7 +24,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
       />
 
-      <div className="container py-24 space-y-24 max-w-5xl">
+      <div className="container py-24 space-y-24 max-w-7xl">
         <section aria-label="About Reshma Muraleedharan Tp" className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <BlurReveal>
@@ -44,38 +44,61 @@ export default function AboutPage() {
 
           <div className="md:col-span-7 space-y-6">
             <BlurReveal delay={0.2}>
-              <span className="text-xs font-semibold text-gold uppercase tracking-widest">About</span>
-              <h1 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-                Capturing stories through film &amp; written prose.
+              <h1 className="font-heading text-4xl sm:text-4xl font-bold tracking-tight text-white leading-[1.1]">
+                About Me
               </h1>
               <div className="space-y-4 pt-2 text-base text-muted-foreground leading-relaxed">
                 <p>
-                 I'm Reshma Muraleedharan TP, a writer and advertisement content creator from Kerala who believes every story should leave an emotional imprint. Whether it's a 30-second brand film, a short-form reel, or a screenplay, I'm drawn to stories that feel honest, cinematic, and human.
+                  I am Reshma Muraleedharan Tp, a writer who believes that every story has the power to find a special place in the human heart.
                 </p>
                 <p>
-                  Born in Malappuram and now based in Ernakulam, I studied Journalism and Mass Communication before beginning my career in entertainment journalism. From writing movie news and reviews, I moved into film promotions and later into advertising, where I discovered my passion for crafting visual narratives for brands.
+                  I was born and raised in Malappuram, Kerala. However, for the past six years, I have been living in Ernakulam, a city that has shaped both my personal life and my creative journey.
                 </p>
                 <p>
-                  Over the years, I've worked across multiple creative teams as a Content Writer and Creative Head, developing campaigns, directing creative concepts, writing scripts, leading productions, and collaborating closely with clients. Each role strengthened my understanding of storytelling—not just as words on a page, but as experiences that connect people with ideas.
+                  After completing my secondary education, I chose Commerce for my higher secondary studies. I then earned a Bachelor&apos;s degree in Mass Communication and Journalism, followed by a one year Postgraduate Diploma in Television Journalism. Later, I completed my Master&apos;s degree in Journalism and Mass Communication.
                 </p>
                 <p>
-                  Today, I work independently as a Content Creator and Writer, focusing on brand films, product videos, and short-form stories that resonate with audiences. My approach is calm, cinematic, and precise—shaping each project around rhythm, atmosphere, and emotional clarity.
+                  My professional journey began with an online entertainment channel, where I worked for a year as a movie news and review writer. I then moved to a film promotion company, where I gained hands on experience in creating content that connected films with audiences. I was also responsible for managing the company&apos;s website.
+                </p>
+                <p>
+                  As my passion for writing grew, I stepped into the advertising industry. I worked as a Content Writer, creating brand stories, visual scripts, and creative content for various brands. Later, I joined another advertising agency as a Creative Head. Along with content writing, my responsibilities included leading creative ideas, coordinating shoots, client relation, managing team and developing engaging concepts.
+                </p>
+                <p>
+                  Over the years, I have had the opportunity to work with seven different companies. Each organization played a significant role in shaping me as a writer and creative professional. Every experience taught me how to understand people more deeply, build compelling commercial narratives, and transform ideas into meaningful stories. Today, I work as a freelance writer, focusing primarily on short film scripts, creative concepts, and storytelling for branding.
+                </p>
+                <p>
+                  To me, writing is a powerful tool. I aspire to write stories that pierce the heart.
                 </p>
               </div>
             </BlurReveal>
           </div>
         </section>
 
-        <section aria-labelledby="storyverse-heading" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-6">
+        <section aria-labelledby="storyverse-heading" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
+          {/* Storyverse logo — fixed aspect ratio so it stays visible on mobile */}
+          <div className="md:col-span-4">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[180px] overflow-hidden rounded-xl border border-white/10 md:max-w-none">
+              <Image
+                src="/images/Storyverse.jpeg"
+                alt="Storyverse logo"
+                fill
+                sizes="(max-width: 768px) 180px, 30vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-6 md:col-span-8">
           <SectionHeader
-            badgeTag="Personal Project"
+            badgeTag=" My New Venture"
             title="Storyverse"
             subtitle="A space for thoughts, emotions, and stories that grow from within."
           />
 
           <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>
-              Storyverse is an Instagram space created by Reshma Muraleedharan Tp to hold the thoughts, emotions, and stories that live inside her. Every post—whether it is a story, prose, poetry, or a review—comes from a deeply personal place.
+              Storyverse is an Instagram space created to hold the thoughts, emotions, and stories that live within Reshma Muraleedharan Tp. Every post—whether it is a story, prose, poetry, or a review—comes from a deeply personal place.
             </p>
             <p>
               The name Storyverse was chosen intentionally because it does not belong to one single genre. It is a home for many moods, many voices, and many kinds of storytelling.
@@ -94,47 +117,16 @@ export default function AboutPage() {
             Visit Storyverse
             <ArrowUpRight className="h-4 w-4" />
           </a>
+          </div>
+          </div>
         </section>
 
-        <section aria-label="Creative philosophy" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-8">
+        {/* <section aria-label="Creative philosophy" className="rounded-2xl border border-slate bg-navy/40 p-8 md:p-12 shadow-soft-md space-y-8">
           <SectionHeader
             badgeTag="Creative Ethos"
             title="Philosophy"
             subtitle="The guiding principles shaping every frame and every sentence."
           />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-2">
-            <FadeIn delay={0.1} className="space-y-3">
-              <div className="p-3 rounded-lg bg-gold/10 text-gold w-fit border border-gold/20">
-                <Film className="h-5 w-5" />
-              </div>
-              <h3 className="font-heading text-base font-bold text-white">Cinematic Restraint</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Confidence is expressed through composition and silence — allowing light, space, and movement to carry the narrative weight.
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.2} className="space-y-3">
-              <div className="p-3 rounded-lg bg-gold/10 text-gold w-fit border border-gold/20">
-                <Feather className="h-5 w-5" />
-              </div>
-              <h3 className="font-heading text-base font-bold text-white">Story Before Technology</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Equipment and technique exist to serve the emotional core of a story — never the reverse. The script leads every decision.
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.3} className="space-y-3">
-              <div className="p-3 rounded-lg bg-gold/10 text-gold w-fit border border-gold/20">
-                <Lightbulb className="h-5 w-5" />
-              </div>
-              <h3 className="font-heading text-base font-bold text-white">Emotional Truth</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Authenticity is the cornerstone of compelling storytelling — it's what makes characters relatable and narratives resonate.
-              </p>
-            </FadeIn>
-          </div>
-        {/* </section> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-2">
             <FadeIn delay={0.1} className="space-y-3">
@@ -167,7 +159,7 @@ export default function AboutPage() {
               </p>
             </FadeIn>
           </div>
-        </section>
+        </section> */}
 
         {/* 3. Storytelling Journey */}
         <section aria-labelledby="journey-heading" className="space-y-10">
@@ -201,7 +193,7 @@ export default function AboutPage() {
         {/* 4. CTA Banner */}
         <section aria-label="Contact call-to-action">
           <CTABanner
-            heading="Let's build something extraordinary."
+            heading="Let&apos;s build something extraordinary."
             description="Open to select commercial directing, brand film commissions, and creative writing collaborations."
             buttonLabel="Start a Conversation"
           />

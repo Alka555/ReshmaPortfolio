@@ -5,11 +5,36 @@ import { createClient } from "@/lib/supabase/server";
 import { projectSchema, ProjectInput } from "@/lib/validators/project.schema";
 import { revalidatePath } from "next/cache";
 
+type ProjectRecord = {
+  id: string;
+  title: string;
+  client: string;
+  year: number | string;
+  category_slug: string;
+  slug: string;
+  featured: boolean;
+  published: boolean;
+  description: string;
+  challenge?: string;
+  idea?: string;
+  execution?: string;
+  outcome?: string;
+  thumbnail: string;
+  video_url?: string;
+  project_media?: ReadonlyArray<{
+    id?: string;
+    media_url?: string;
+    caption?: string;
+    display_order?: number;
+    media_type?: string;
+  }>;
+};
+
 export async function getProjectsAction(options?: {
   category?: string;
   featured?: boolean;
   publishedOnly?: boolean;
-}) {
+}): Promise<{ data: ProjectRecord[]; error: string | null }> {
   if (!cmsEnabled) {
     let data = [...staticProjects];
     if (options?.category && options.category !== "all") {
@@ -48,13 +73,14 @@ export async function getProjectsAction(options?: {
     return { data: [], error: error.message };
   }
 
-  return { data, error: null };
+  const result = Array.isArray(data) ? data : data ? [data] : [];
+  return { data: result as ProjectRecord[], error: null };
 }
 
-export async function getProjectBySlugAction(slug: string) {
+export async function getProjectBySlugAction(slug: string): Promise<{ data: ProjectRecord | null; error: string | null }> {
   if (!cmsEnabled) {
-    const project = staticProjects.find((p) => p.slug === slug) ?? null;
-    return { data: project, error: project ? null : "Not found" };
+    const project = staticProjects.find((p) => p.slug === slug) as ProjectRecord | undefined;
+    return { data: project ?? null, error: project ? null : "Not found" };
   }
 
   const supabase = await createClient();
@@ -68,7 +94,7 @@ export async function getProjectBySlugAction(slug: string) {
     return { data: null, error: error.message };
   }
 
-  return { data, error: null };
+  return { data: data as ProjectRecord | null, error: null };
 }
 
 export async function createProjectAction(input: ProjectInput) {
@@ -125,6 +151,10 @@ export async function updateProjectAction(id: string, input: Partial<ProjectInpu
 
   if (error) {
     return { error: error.message };
+  }
+
+  if (!data) {
+    return { error: "Project not found" };
   }
 
   revalidatePath("/");

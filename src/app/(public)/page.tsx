@@ -1,22 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image"; // re-enable if the Services section is uncommented
 import { ArrowRight, CalendarDays, MessageCircleMore, MapPin } from "lucide-react";
 import { generatePageMetadata, websiteJsonLd, personJsonLd } from "@/lib/seo";
-import {
-  siteContent,
-  featuredProjects,
-  featuredWriting,
-  staticAwards,
-  staticTestimonials,
-} from "@/config/portfolio-content";
+import { siteContent, workSeries } from "@/config/portfolio-content";
 import { Hero } from "@/components/common/hero";
-import { SectionHeader } from "@/components/common/section-header";
-import { ProjectCard } from "@/components/cards/project-card";
-import { VideoEmbed } from "@/components/common/video-embed";
-import { CTABanner } from "@/components/common/cta-banner";
-import { AwardCard } from "@/components/cards/award-card";
-import { TestimonialCard } from "@/components/cards/testimonial-card";
+import { StoryverseSection } from "@/components/common/storyverse-section";
 import { FadeIn } from "@/components/motion/fade-in";
 import { InstagramSlider } from "../../components/common/instagram-slider";
 import { Button } from "@/components/ui/button";
@@ -28,34 +17,6 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 export default function HomePage() {
-  const projects = featuredProjects;
-  const writing = featuredWriting;
-  const awards = staticAwards;
-  const testimonials = staticTestimonials;
-  const reelItems = (siteContent.reels as unknown as Array<{
-    id: string;
-    title: string;
-    description: string;
-    thumbnail: string;
-    href: string;
-    label: string;
-  }>);
-  const reelGroupA = reelItems.slice(0, 4).map((item) => ({
-    id: item.id,
-    title: item.title,
-    description: item.description,
-    thumbnail: item.thumbnail,
-    href: item.href,
-    label: item.label,
-  }));
-  const reelGroupB = reelItems.slice(4).map((item) => ({
-    id: item.id,
-    title: item.title,
-    description: item.description,
-    thumbnail: item.thumbnail,
-    href: item.href,
-    label: item.label,
-  }));
   const services = [
     {
       title: "Brand films",
@@ -125,60 +86,24 @@ export default function HomePage() {
         tagline={siteContent.tagline}
         backgroundImage={siteContent.heroBackgroundImage}
         portraitImage={siteContent.portraitImage || "/images/selfPotrait.jpeg"}
-        heroHighlightTitle={siteContent.introTitle}
+        // heroHighlightTitle={siteContent.introTitle}
         heroDescription={siteContent.introDescription}
         heroQuote="Quiet confidence tells the story better than noise."
         heroSkills={siteContent.skills}
       />
 
       <div className="space-y-16 pb-20 sm:space-y-24 sm:pb-28 md:space-y-36 md:pb-36">
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="reels-slider">
-          <InstagramSlider Ras={reelGroupA} Moolans={reelGroupB} />
+
+        <section className="container px-3 py-6 sm:px-4 md:px-8" aria-labelledby="storyverse-section">
+          <StoryverseSection />
         </section>
 
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="storyverse-section">
-          <FadeIn>
-            <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/[0.03] shadow-soft-md sm:rounded-[2rem]">
-              <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="relative min-h-[240px] sm:min-h-[320px] md:min-h-[420px]">
-                  <Image
-                    src="/images/Storyverse.jpeg"
-                    alt="Storyverse cover image"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="space-y-6 p-5 sm:p-8 md:p-10 lg:p-12">
-                  <div className="space-y-3">
-                    <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Storyverse</p>
-                    <h2 className="font-heading text-3xl leading-tight text-white md:text-4xl">
-                      A living space for thoughts, feelings, and the stories that stay with you.
-                    </h2>
-                  </div>
-
-                  <p className="max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
-                    Storyverse is a personal corner for prose, poetry, reflections, and reviews—built around emotion, blue tones, and the feeling of being deeply understood.
-                  </p>
-
-                  <a
-                    href="https://www.instagram.com/storyverse_._?igsh=NGxvaDVhY255Yjkz"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center text-[10px] uppercase tracking-[0.2em] text-gold transition-colors duration-300 hover:text-white"
-                  >
-                    Visit Storyverse
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="reels-slider">
+          <InstagramSlider series={workSeries} variant="stories" />
         </section>
 
-        <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
-          <div className="container max-w-7xl px-4 sm:px-6 md:px-12">
+        {/* <section className="border-y border-white/10 bg-white/[0.02] py-12 sm:py-16 md:py-24">
+          <div className="container max-w-7xl px-3 sm:px-4 md:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
               <FadeIn>
                 <p className="text-[10px] uppercase tracking-[0.28em] text-gold">Creative philosophy</p>
@@ -193,10 +118,10 @@ export default function HomePage() {
               </FadeIn>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Featured Films */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl" aria-labelledby="featured-work">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl" aria-labelledby="featured-work">
           <FadeIn>
             <div className="mb-12 flex flex-col gap-4 sm:mb-16 sm:flex-row sm:items-end sm:justify-between md:mb-20">
               <SectionHeader
@@ -245,11 +170,11 @@ export default function HomePage() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* Showreel — full bleed */}
-        <section id="showreel" aria-labelledby="showreel-heading">
-          <div className="container px-4 sm:px-6 md:px-12 max-w-7xl mb-8 sm:mb-10">
+        {/* <section id="showreel" aria-labelledby="showreel-heading">
+          <div className="container px-3 sm:px-4 md:px-8 max-w-7xl mb-8 sm:mb-10">
             <FadeIn>
               <SectionHeader
                 badgeTag="In motion"
@@ -269,10 +194,10 @@ export default function HomePage() {
               />
             </div>
           </FadeIn>
-        </section>
+        </section> */}
 
         {/* Writing */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
           <div className="grid gap-10 sm:gap-16 lg:grid-cols-12 lg:gap-8">
             <FadeIn className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
               <SectionHeader
@@ -312,10 +237,10 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Services & Approach */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl space-y-8">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl space-y-8">
           <FadeIn>
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)]">
               <div className="max-w-3xl">
@@ -383,10 +308,10 @@ export default function HomePage() {
               </div>
             </div>
           </FadeIn>
-        </section>
+        </section> */}
 
         {/* Awards & Testimonials */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+        {/* <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
           <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-24">
             <FadeIn>
               <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
@@ -407,7 +332,7 @@ export default function HomePage() {
               </div>
             </FadeIn>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact CTA */}
         {/* <section className="container px-6 md:px-12 max-w-7xl">
@@ -420,7 +345,7 @@ export default function HomePage() {
             />
           </FadeIn>
         </section> */}
-        <section className="container px-4 sm:px-6 md:px-12 max-w-7xl">
+        <section className="container px-3 sm:px-4 md:px-8 max-w-7xl">
                 <FadeIn>
                   <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 shadow-[0_20px_60px_-25px_rgba(5,15,30,0.45)] sm:rounded-[2rem] sm:p-8 md:p-10">
                     <div className="flex flex-col gap-6 sm:items-start md:flex-row md:items-end md:justify-between">

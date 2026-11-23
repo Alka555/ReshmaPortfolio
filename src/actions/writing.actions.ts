@@ -5,13 +5,26 @@ import { createClient } from "@/lib/supabase/server";
 import { writingSchema, WritingInput } from "@/lib/validators/writing.schema";
 import { revalidatePath } from "next/cache";
 
+type WritingRecord = {
+  id: string;
+  title: string;
+  category_slug: string;
+  summary: string;
+  thumbnail: string;
+  external_url?: string;
+  content?: string;
+  featured: boolean;
+  published: boolean;
+  slug: string;
+};
+
 export async function getWritingAction(options?: {
   category?: string;
   featured?: boolean;
   publishedOnly?: boolean;
-}) {
+}): Promise<{ data: WritingRecord[]; error: string | null }> {
   if (!cmsEnabled) {
-    let data = [...staticWriting];
+    let data = [...staticWriting] as WritingRecord[];
     if (options?.category && options.category !== "all") {
       data = data.filter((w) => w.category_slug === options.category);
     }
@@ -44,7 +57,8 @@ export async function getWritingAction(options?: {
     return { data: [], error: error.message };
   }
 
-  return { data, error: null };
+  const result = Array.isArray(data) ? data : data ? [data] : [];
+  return { data: result as WritingRecord[], error: null };
 }
 
 export async function createWritingAction(input: WritingInput) {

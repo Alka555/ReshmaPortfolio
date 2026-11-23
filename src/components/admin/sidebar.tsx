@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 const adminNavItems = [
   { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
   { name: "Projects", href: "/admin/dashboard/projects", icon: Film },
-  { name: "Writing", href: "/admin/dashboard/writing", icon: FileText },
+  // { name: "Writing", href: "/admin/dashboard/writing", icon: FileText },
   { name: "Awards", href: "/admin/dashboard/awards", icon: Trophy },
   { name: "Testimonials", href: "/admin/dashboard/testimonials", icon: Quote },
   { name: "Messages", href: "/admin/dashboard/messages", icon: Mail },

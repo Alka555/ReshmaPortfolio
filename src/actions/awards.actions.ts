@@ -5,7 +5,16 @@ import { createClient } from "@/lib/supabase/server";
 import { awardSchema, AwardInput } from "@/lib/validators/award.schema";
 import { revalidatePath } from "next/cache";
 
-export async function getAwardsAction() {
+type AwardRecord = {
+  id: string;
+  title: string;
+  organization: string;
+  year: number;
+  project_title?: string;
+  description?: string;
+};
+
+export async function getAwardsAction(): Promise<{ data: AwardRecord[]; error: string | null }> {
   if (!cmsEnabled) {
     return { data: [...staticAwards], error: null };
   }
@@ -17,7 +26,8 @@ export async function getAwardsAction() {
     .order("year", { ascending: false });
 
   if (error) return { data: [], error: error.message };
-  return { data, error: null };
+  const result = Array.isArray(data) ? data : data ? [data] : [];
+  return { data: result as AwardRecord[], error: null };
 }
 
 export async function createAwardAction(input: AwardInput) {
