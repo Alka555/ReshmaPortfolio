@@ -86,7 +86,7 @@ export default function HomePage() {
         tagline={siteContent.tagline}
         backgroundImage={siteContent.heroBackgroundImage}
         portraitImage={siteContent.portraitImage || "/images/selfPotrait.jpeg"}
-        heroHighlightTitle={siteContent.introTitle}
+        // heroHighlightTitle={siteContent.introTitle}
         heroDescription={siteContent.introDescription}
         heroQuote="Quiet confidence tells the story better than noise."
         heroSkills={siteContent.skills}

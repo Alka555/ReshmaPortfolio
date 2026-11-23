@@ -78,12 +78,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-10">
           {/* Storyverse logo — fixed aspect ratio so it stays visible on mobile */}
           <div className="md:col-span-4">
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-[260px] overflow-hidden rounded-xl border border-white/10 md:max-w-none">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[180px] overflow-hidden rounded-xl border border-white/10 md:max-w-none">
               <Image
                 src="/images/Storyverse.jpeg"
                 alt="Storyverse logo"
                 fill
-                sizes="(max-width: 768px) 260px, 30vw"
+                sizes="(max-width: 768px) 180px, 30vw"
                 className="object-cover"
               />
             </div>

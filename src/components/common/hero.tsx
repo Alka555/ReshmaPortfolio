@@ -35,7 +35,7 @@ export function Hero({
   // portraitImage = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
   portraitImage = "/images/selfPotrait.jpeg",
   portraitAlt = "Portrait of Reshma Muraleedharan Tp",
-  heroHighlightTitle = "I build cinematic worlds that feel intimate, clear, and quietly unforgettable.",
+  // heroHighlightTitle = "I build cinematic worlds that feel intimate, clear, and quietly unforgettable.",
   heroDescription = "I craft stories that connect brands with people through emotion, clarity, and cinematic storytelling.",
   heroQuote = "Quiet confidence tells the story better than noise.",
   heroSkills,
@@ -80,11 +80,11 @@ export function Hero({
               <h1 className="font-heading text-[clamp(2.35rem,6vw,6.2rem)] font-medium leading-[0.92] tracking-[-0.06em] text-white">
                 {title}
               </h1>
-              {heroHighlightTitle ? (
+              {/* {heroHighlightTitle ? (
                 <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
                   {heroHighlightTitle}
                 </p>
-              ) : null}
+              ) : null} */}
             </BlurReveal>
 
             <BlurReveal delay={0.2}>
