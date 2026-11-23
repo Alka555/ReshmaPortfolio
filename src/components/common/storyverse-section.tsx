@@ -29,9 +29,9 @@ export function StoryverseSection() {
             </div>
 
             <p className="text-base leading-relaxed text-white/65 md:text-lg">
-As a writer, I felt a deep desire to create a space for my thoughts, emotions, and the stories and characters that originate from within me. It was this decision that led me to create the Instagram account called 'Storyverse'. Every single post I share through 'Storyverse' is close to my heart. It could be a story, prose, poetry, or a review. It may or may not align with reader preferences. That is exactly why I insisted me to choosing the name 'Storyverse'. Because I wanted a name that didn't lean toward any one specific genre. 
+As a writer, I felt a deep desire to create a space for my thoughts, emotions, and the stories and characters that originate from within me. It was this decision that led me to create the Instagram account called &apos;Storyverse&apos;. Every single post I share through &apos;Storyverse&apos; is close to my heart. It could be a story, prose, poetry, or a review. It may or may not align with reader preferences. That is exactly why I insisted me to choosing the name &apos;Storyverse&apos;. Because I wanted a name that didn&apos;t lean toward any one specific genre. 
 
-Along with this, I would also like to mention another thing. Blue is my favorite color, and that is exactly why I chose blue for the 'Storyverse' logo.
+Along with this, I would also like to mention another thing. Blue is my favorite color, and that is exactly why I chose blue for the &apos;Storyverse&apos; logo.
            </p>
 
             <a
